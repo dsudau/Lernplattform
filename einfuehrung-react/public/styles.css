@@ -1,0 +1,10 @@
+.message {
+    border: 1px solid pink;
+    background-color: lightyellow;
+}
+.headline {
+    color: red;
+}
+.paragraph {
+    color: blue;
+}

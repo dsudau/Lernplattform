@@ -1,0 +1,5 @@
+const myElement = React.createElement('p', {}, 'Mein erstes React-Element');
+const myJSXElement = /*#__PURE__*/React.createElement("p", {
+  id: "react-app"
+}, "Mein erste JSXElement");
+ReactDOM.render(myJSXElement, document.getElementById('react-app'));

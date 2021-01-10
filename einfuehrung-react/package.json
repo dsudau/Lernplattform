@@ -1,0 +1,19 @@
+{
+  "name": "einfuehrung-react",
+  "version": "1.0.0",
+  "description": "react lernen",
+  "main": "src/app.js",
+  "scripts": {
+    "start": "npx servor ./public --reload",
+    "compile": "babel src --out-dir public/lib",
+    "compile:watch": "babel src --out-dir public/lib --watch",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "Daniel Sudau",
+  "license": "MIT",
+  "devDependencies": {
+    "@babel/cli": "^7.12.10",
+    "@babel/core": "^7.12.10",
+    "@babel/preset-react": "^7.12.10"
+  }
+}
