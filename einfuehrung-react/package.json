@@ -2,7 +2,6 @@
   "name": "einfuehrung-react",
   "version": "1.0.0",
   "description": "react lernen",
-  "main": "src/app.js",
   "scripts": {
     "start": "webpack serve",
     "build": "webpack"
