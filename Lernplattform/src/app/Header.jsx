@@ -1,52 +1,67 @@
 import React from 'react';
+import { SearchComponent } from './SearchComponent';
 
 export class Header extends React.Component {
     constructor(props){
         super(props);
         this.state = {
-            meineKurseButtonClicked: "false"
+            myCoursesButtonClicked: "false",
+            catalogButtonClicked: "false",
+            forumButtonClicked: "false"
         };
-        this.handleMeineKurse = this.handleMeineKurse.bind(this);
+        this.handleMyCoursesButton = this.handleMyCoursesButton.bind(this);
+        this.handleCatalogButton = this.handleCatalogButton.bind(this);
+        this.handleForumButton = this.handleForumButton.bind(this);
     }
-    handleMeineKurse(event){
+    handleMyCoursesButton(event){
         this.setState(state => {
-            state.meineKurseButtonClicked = "true";
+            state.myCoursesButtonClicked = "true";
+            return state;
+        });
+    }
+    handleCatalogButton(event){
+        this.setState(state => {
+            state.catalogButtonClicked = "true";
+            return state;
+        });
+    }
+    handleForumButton(event){
+        this.setState(state => {
+            state.forumButtonClicked = "true";
             return state;
         });
     }
     render(){
         return(
             <div>
-                <p>Header</p>
+                <h1>Willkommen auf der Lernplattform</h1>
                 <table>
-                    <tr>
-                        <td>
-                            <button name="meineKurseButton"
-                                onClick={this.handleMeineKurse}>
-                                    Meine Kurse {this.state.meineKurseButtonClicked}
-                            </button>
-                        </td>
-                        <td>
-                            <button name="meineKurseButton"
-                                onClick={this.handleMeineKurse}>
-                                    Katalog {this.state.meineKurseButtonClicked}
-                            </button>
-                        </td>
-                        <td>
-                            <button name="meineKurseButton"
-                                onClick={this.handleMeineKurse}>
-                                    Forum {this.state.meineKurseButtonClicked}
-                            </button>
-                        </td>
-                        <td>
-                            <button name="meineKurseButton"
-                                onClick={this.handleMeineKurse}>
-                                    Meine Kurse {this.state.meineKurseButtonClicked}
-                            </button>
-                        </td>
-                    </tr>
+                    <tbody>
+                        <tr>
+                            <td>
+                                <button name="myCoursesButton"
+                                    onClick={this.handleMyCoursesButton}>
+                                        Meine Kurse
+                                </button>
+                            </td>
+                            <td>
+                                <button name="catalogButton"
+                                    onClick={this.handleCatalogButton}>
+                                        Katalog
+                                </button>
+                            </td>
+                            <td>
+                                <button name="forumButton"
+                                    onClick={this.handleForumButton}>
+                                        Forum
+                                </button>
+                            </td>
+                            <td>
+                                <SearchComponent/ >
+                            </td>
+                        </tr>
+                    </tbody>
                 </table>
-
             </div>
         );
     }

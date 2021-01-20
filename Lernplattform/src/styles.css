@@ -1,34 +1,46 @@
-body {
-    display:inline-block;
-    font-style: 'Helvetica';
-    align-content: center;
+body{
+    max-width: 80%;
+    margin: auto;
+    font-family: helvetica;
 }
-button[name="meineKurseButton"]{
-    display:inline-block;
-    padding:0.35em 2.4em;
+button{
+    margin: 0.2em 0 0.2em 0;
+    padding:0.3em 2em;
     border:0.1em solid #000000;
-    margin:0 0.3em 0.3em 0;
-    border-radius:0.5em;
-    width: 100%;
-    box-sizing: border-box;
-    text-decoration:none;
-    font-family:'Helvetica';
+    border-radius:0.3em;
+    width: 95%;
     font-weight:400;
     font-size: 2em;
     color:#000000;
+    background-color:#FFFFFF;
     text-align:center;
-    transition: all 0.2s;
 }
-button[name="meineKurseButton"]:hover{
+input{
+    margin: 0.2em 0 0.2em 0;
+    padding:0.3em 0em;
+    border:0.1em solid #000000;
+    border-radius:0.3em;
+    width: 95%;
+    font-weight:400;
+    font-size: 2em;
+    color:#000000;
+    background-color:#FFFFFF;
+    text-align:center;
+}
+button:hover{
     background-color:#AAAAAA;
 }
-@media all and (max-width:30em){
-        button{
-        display:block;
-        margin:0.4em auto;
-    }
-}
 table{
+    width: 100%;
     table-layout: fixed;
-    width: 50%;
+    border-bottom: 0.2em solid #000000;
+    border-top: 0.2em solid #000000;
+}
+td{
+    width:20%;
+    text-align: center;
+}
+h1{
+    font-size: 3em;
+    margin: 0.25em
 }
