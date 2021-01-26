@@ -6,6 +6,7 @@ export class Course extends React.Component {
         super(props);
 
         this.state = {
+            id: '',
             name: '',
             description: '',
             tasks: []

@@ -6,8 +6,44 @@ export const sumRecipes = function (recipes){
         if(existingIngredient){
             existingIngredient.amount += ingredient.amount;
         }else{
-            list.push(ingredient);
+            list.push({...ingredient});
         }
         return list;
     }, [])
+}
+
+export const addRecipe = function(recipes, newRecipe){
+    return [
+        ...recipes,
+        {
+          id: recipes.length + 1,
+          showEditForm: false,
+          ...newRecipe
+        }
+      ]
+}
+
+export const toggleEditForm = function(recipes, id) {
+    return recipes.map(recipe => {
+        if(recipe.id == id) {
+          return {
+            ...recipe,
+            showEditForm: !recipe.showEditForm
+          }
+        }
+        return recipe;
+      })
+}
+
+export const changeRecipe = function(recipes, id, changedRecipe){
+    return recipes.map(recipe => {
+        if(recipe.id == id){
+            return{
+                ...recipe,
+                ...changedRecipe,
+                showEditForm: false
+            }
+        }
+        return recipe;
+    });
 }

@@ -1,0 +1,17 @@
+{
+    "tasks":
+        [
+            {
+                "id": 1,
+                "name": "Aufgabe 1: Addition",
+                "question": "Wieviel ist 1 + 1 ?",
+                "type": "OneChoice"
+            },
+            {
+                "id": 2,
+                "name": "Aufgabe 1: Europa",
+                "question": "Wieviele Länder gehören der EU an?",
+                "type": "MultipleChoice"
+            }
+        ]
+}

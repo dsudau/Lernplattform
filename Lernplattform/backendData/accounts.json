@@ -1,0 +1,19 @@
+{
+    "accounts":
+        [
+            {
+                "id": 1,
+                "name": "Max Muster",
+                "email": "max@muster.de",
+                "password": "1234",
+                "role": "Teilnehmer"
+            },
+            {
+                "id": 2,
+                "name": "Maria Muster",
+                "email": "maria@muster.de",
+                "password": "1234",
+                "role": "Kursleiter"
+            }
+        ]
+}

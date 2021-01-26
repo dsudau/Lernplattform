@@ -1,94 +1,70 @@
 import React from 'react';
-import {IngredientList} from './ingredientList';
-import {sumRecipes} from './recipeStateService';
+import {IngredientList} from './IngredientList';
+import {addRecipe, sumRecipes, toggleEditForm, changeRecipe} from './recipeStateService';
 import {RecipeForm} from './RecipeForm/RecipeForm';
-
-const mockRecipes = [
-    {
-        "id": 1,
-        "name": "Apfelkuchen",
-        "showEditForm": false,
-        "ingredients": [
-            {
-                "name": "Zucker",
-                "amount": 100,
-                "unit": "Gramm"
-              },
-              {
-                "name": "Eier",
-                "amount": 1,
-                "unit": "Stück"
-              },
-              {
-                "name": "Vanillinzucker",
-                "amount": 1,
-                "unit": "Stück"
-              },
-              {
-                "name": "Äpfel",
-                "amount": 6,
-                "unit": "Stück"
-              },
-              {
-                "name": "Puddingpulver",
-                "amount": 1,
-                "unit": "Stück"
-              }
-        ]
-    },
-    {
-        "id": 2,
-        "name": "Pudding",
-        "showEditForm": false,
-        "ingredients": [
-          {
-            "name": "Zucker",
-            "amount": 50,
-            "unit": "Gramm"
-          },
-          {
-            "name": "Sahne",
-            "amount": 0.2,
-            "unit": "Liter"
-          },
-          {
-            "name": "Vanilleschote",
-            "amount": 1,
-            "unit": "Stück"
-          }
-        ]
-      }
-];
+import {RecipeList} from './RecipeList';
+import {Tab} from '../components/tabs/Tab';
+import {TabController} from '../components/tabs/TabController';
 
 export class App extends React.Component{
     constructor(props){
         super(props);
 
         this.state = {
-          recipes: mockRecipes
+          recipes: []
         }
         this.handleAddRecipe = this.handleAddRecipe.bind(this);
+        this.handleToggleEditForm = this.handleToggleEditForm.bind(this);
+        this.handleChangeRecipe = this.handleChangeRecipe.bind(this);
+    }
+
+    componentDidMount(){
+      fetch('http://localhost:3000/recipes')
+      .then(response => response.json())
+      .then(recipes => {
+        this.setState({
+          recipes
+        });
+      });
     }
 
     handleAddRecipe(newRecipe){
       this.setState(currentState => {
           return {
             ...currentState,
-            recipes: [
-              ...currentState.recipes,
-              newRecipe
-            ]
+            recipes: addRecipe(currentState.recipes, newRecipe)
           };
+      });
+    }
+    handleToggleEditForm(id){
+      this.setState(currentState => {
+        return {
+          ...currentState,
+          recipes: toggleEditForm(currentState.recipes, id)
+        }
+      })
+    }
+    handleChangeRecipe(id, changedRecipe){
+      this.setState( currentState => {
+        return {
+          ...currentState,
+          recipes: changeRecipe(currentState.recipes, id, changedRecipe)
+        }
       });
     }
     render(){
         return(
-            <React.Fragment>
-                <h1>Einkaufsliste</h1>
-                <IngredientList ingredients={sumRecipes(this.state.recipes)} />
-                <h2>Rezept hinzufügen</h2>
-                <RecipeForm onSave={this.handleAddRecipe} />
-            </React.Fragment>
+            <TabController>
+                <Tab headline="Einkaufsliste">
+                  <IngredientList ingredients={sumRecipes(this.state.recipes)} />
+                </Tab>
+                <Tab headline="Repzepte">
+                  <RecipeList recipes={this.state.recipes} onToggleEditForm={this.handleToggleEditForm} onChangeRecipe={this.handleChangeRecipe} />
+                </Tab>
+                <Tab headline="Rezept hinzufügen">
+                  <RecipeForm onSave={this.handleAddRecipe} />
+                </Tab>
+            </TabController>
         );
     }
 }

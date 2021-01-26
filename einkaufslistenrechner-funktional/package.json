@@ -1,18 +1,16 @@
 {
-  "name": "einkaufslistenrechner",
+  "name": "10-react-hooks",
   "version": "1.0.0",
-  "description": "",
-  "main": "index.js",
+  "description": "Der Einkaufslistenrechner aus Folge 9 - mit funktionalen Komponente und React Hooks.",
   "scripts": {
     "start": "webpack-dev-server",
-    "start-backend": "json-server --watch mockupBackend/recipes.json",
-    "build": "webpack",
-    "compile:watch": "babel src --out-dir public/lib --watch"
+    "start-backend": "json-server --watch mockBackend/mockRecipes.json",
+    "build": "webpack"
   },
-  "author": "Daniel Sudau",
+  "author": "David Losert",
   "license": "MIT",
   "dependencies": {
-    "json-server": "^0.16.1",
+    "json-server": "0.16.1",
     "react": "16.13.1",
     "react-dom": "16.13.1"
   },

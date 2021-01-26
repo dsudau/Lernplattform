@@ -5,8 +5,8 @@ export class Task extends React.Component {
         super(props);
 
         this.state = {
+            id: '',
             name: '',
-            description: '',
             question: '',
             answers: [],
             key: 0

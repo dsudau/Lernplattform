@@ -1,0 +1,21 @@
+{
+    "courses":
+        [
+            {
+                "id": 1,
+                "name": "Europa"
+            },
+            {
+                "id": 2,
+                "name": "Hauptstädte Europa"
+            },
+            {
+                "id": 3,
+                "name": "Addition"
+            },
+            {
+                "id": 4,
+                "name": "Subtraktion"
+            }
+        ]
+}

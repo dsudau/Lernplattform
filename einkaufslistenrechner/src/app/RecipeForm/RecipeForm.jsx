@@ -1,5 +1,5 @@
 import React from 'react';
-import {IngredientFormPart} from './IngredientFormPart'
+import {IngredientFormPart} from './IngredientFormPart';
 
 import './RecipeForm.css';
 
@@ -18,7 +18,15 @@ const emptyRecipe = {
 export class RecipeForm extends React.Component{
     constructor(props){
         super(props);
-        this.state = emptyRecipe
+        if(props.recipe){
+            this.state = {
+            name: props.recipe.name,
+            ingredients: [
+                ...props.recipe.ingredients
+            ]};
+        }else{
+            this.state = emptyRecipe;
+        };
         this.handleNameChange = this.handleNameChange.bind(this);
         this.handleRecipeSave = this.handleRecipeSave.bind(this);
     }
@@ -63,7 +71,9 @@ export class RecipeForm extends React.Component{
             name: this.state.name,
             ingredients: finishedIngredients
 
-        })
+        });
+
+        this.setState(emptyRecipe);
     }
     render(){
         const ingredientFormParts = this.state.ingredients.map((ingredient, index) => {

@@ -1,0 +1,13 @@
+{
+    "categories":
+        [
+            {
+                "id": 1,
+                "name": "Geographie"
+            },
+            {
+                "id": 2,
+                "name": "Mathematik"
+            }
+        ]
+}
