@@ -3,7 +3,7 @@ body{
     margin: auto;
     font-family: helvetica;
 }
-button{
+input{
     margin: 0.2em 0 0.2em 0;
     padding:0.3em 2em;
     border:0.1em solid #000000;
@@ -16,29 +16,27 @@ button{
     text-align:center;
 }
 input{
-    margin: 0.2em 0 0.2em 0;
-    padding:0.3em 0em;
-    border:0.1em solid #000000;
-    border-radius:0.3em;
-    width: 95%;
-    font-weight:400;
-    font-size: 2em;
-    color:#000000;
-    background-color:#FFFFFF;
-    text-align:center;
+    box-sizing: border-box;
 }
-button:hover{
+input[type="button"]:hover{
     background-color:#AAAAAA;
 }
-table{
-    width: 100%;
+input[type="button"].clicked{
+    background-color:#AAAAAA;
+}
+ul{
+    padding-left: 1%;
+    display: table;
     table-layout: fixed;
+    width: 100%;
     border-bottom: 0.2em solid #000000;
     border-top: 0.2em solid #000000;
 }
-td{
-    width:20%;
-    text-align: center;
+li{
+    width:25%;
+    float:left;
+    list-style-type: none;
+    display: table-cell;
 }
 h1{
     font-size: 3em;

@@ -1,12 +1,12 @@
-import React from 'react';
-import {Course} from './Course';
+import React, {useState} from 'react';
 
-export class Content extends React.Component {
-  render () {
-    return (
-      <React.Fragment>
-          <Course/>
-      </React.Fragment>
-    );
-  }
+export function Content (props){
+
+  return (
+    <React.Fragment>
+      {props.content.map(item => (
+        <h1 key={`course-${item.id}`}>{item.name}</h1>
+      ))}
+    </React.Fragment>
+  )
 }

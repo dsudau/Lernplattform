@@ -1,0 +1,64 @@
+{
+    "accounts":
+        [
+            {
+                "id": 1,
+                "name": "Max Muster",
+                "email": "max@muster.de",
+                "password": "1234",
+                "role": "Teilnehmer"
+            },
+            {
+                "id": 2,
+                "name": "Maria Muster",
+                "email": "maria@muster.de",
+                "password": "1234",
+                "role": "Kursleiter"
+            }
+        ],
+        "categories":
+        [
+            {
+                "id": 1,
+                "name": "Geographie"
+            },
+            {
+                "id": 2,
+                "name": "Mathematik"
+            }
+        ],
+        "courses":
+        [
+            {
+                "id": 1,
+                "name": "Europa"
+            },
+            {
+                "id": 2,
+                "name": "Hauptstädte Europa"
+            },
+            {
+                "id": 3,
+                "name": "Addition"
+            },
+            {
+                "id": 4,
+                "name": "Subtraktion"
+            }
+        ],
+        "tasks":
+        [
+            {
+                "id": 1,
+                "name": "Aufgabe 1: Addition",
+                "question": "Wieviel ist 1 + 1 ?",
+                "type": "OneChoice"
+            },
+            {
+                "id": 2,
+                "name": "Aufgabe 1: Europa",
+                "question": "Wieviele Länder gehören der EU an?",
+                "type": "MultipleChoice"
+            }
+        ]
+}

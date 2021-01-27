@@ -1,22 +1,9 @@
 import React from 'react';
 
-export class Task extends React.Component {
-    constructor(props){
-        super(props);
-
-        this.state = {
-            id: '',
-            name: '',
-            question: '',
-            answers: [],
-            key: 0
-        }
-    }
-    render () {
-        return (
-            <div>
-                <p>Aufgabe</p>
-            </div>
-        );
-    }
+export function Task (props) {
+    return (
+        <React.Fragment>
+            <p>Aufgabe</p>
+        </React.Fragment>
+    );
 }
