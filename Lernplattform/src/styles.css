@@ -3,7 +3,7 @@ body{
     margin: auto;
     font-family: helvetica;
 }
-input{
+input#headerTab{
     margin: 0.2em 0 0.2em 0;
     padding:0.3em 2em;
     border:0.1em solid #000000;
@@ -15,16 +15,16 @@ input{
     background-color:#FFFFFF;
     text-align:center;
 }
-input{
+input#headerTab{
     box-sizing: border-box;
 }
-input[type="button"]:hover{
+input#headerTab[type="button"]:hover{
     background-color:#AAAAAA;
 }
-input[type="button"].clicked{
+input#headerTab[type="button"].clicked{
     background-color:#AAAAAA;
 }
-ul{
+ul#headerTab{
     padding-left: 1%;
     display: table;
     table-layout: fixed;
@@ -32,7 +32,7 @@ ul{
     border-bottom: 0.2em solid #000000;
     border-top: 0.2em solid #000000;
 }
-li{
+li#headerTab{
     width:25%;
     float:left;
     list-style-type: none;
