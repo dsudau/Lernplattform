@@ -1,4 +1,4 @@
-import React, {useState} from 'react';
+import React, {useState, useEffect} from 'react';
 import { CategorySelect } from './formElements/CategorySelect';
 import { sumExistingCategories } from './services/courseService';
 
@@ -10,6 +10,9 @@ export function CourseInputForm (props){
     const [courseTasks, setCourseTasks] = useState([{id: 0, name: 'Beispielname', question: 'Frage', answers:[{id: 0, name: 'eine Antwort', correct: true}], type: 'oneChoice'}]);
     const [courseDescription, setCourseDescription] = useState('');
     const [showResults, setShowResults] = useState(true);
+    const [taskName, setTaskName] = useState(null);
+    const [sendToServer, setSendToServer] = useState(false);
+    
     function handleNameChange (event) {
         setCourseName(event.target.value);
     }
@@ -19,6 +22,10 @@ export function CourseInputForm (props){
     function handleSetCourseIDAndChangeViewToTaskInpunput (event) {
         setCourseID(props.content.length+1);
         setShowResults(false);
+        if(newCourseCategory !== ''){
+            setCourseCategorySelection(newCourseCategory);
+        }
+        
     }
     function handleNewCategoryChange (event) {
         setNewCourseCategory(event.target.value);
@@ -27,9 +34,25 @@ export function CourseInputForm (props){
         setCourseCategorySelection(selectedValue);
     }
     function handleTaskName (event) {
-        
+        setTaskName(event.target.value);
     }
-    console.log('ID:' + courseID + ' Kategorie: ' + courseCategorySelection + 'Neue Kategorie: ' + newCourseCategory + 'Kursname: ' + courseName + ' Beschreibung: ' + courseDescription);
+    function handleNextTask (event) {
+        setSendToServer(true);
+        setCourseTasks([{id: 0, name: taskName, question: 'Frage', answers:[{id: 0, name: 'eine Antwort', correct: true}], type: 'oneChoice'}]);
+    }
+    useEffect(() => {
+        if(sendToServer){
+            setSendToServer(false);
+            props.newCoursData({
+                "id": courseID,
+                "category": courseCategorySelection,
+                "name": courseName,
+                "tasks": courseTasks,
+                "description": courseDescription
+              })
+            }
+        },[sendToServer])
+    console.log('ID:' + courseID.value + ' Kategorie: ' + courseCategorySelection + 'Neue Kategorie: ' + newCourseCategory + 'Kursname: ' + courseName + ' Beschreibung: ' + courseDescription);
     return (
         <React.Fragment>
             { showResults ?  
@@ -37,7 +60,7 @@ export function CourseInputForm (props){
                 <li>
                     <CategorySelect selectedCategory={callbackSelectedCategory} categories={sumExistingCategories(props.content)} />
                     <label>Kategorie nicht vorhanden? Erstelle eine neue:
-                        <input type="text" value= { newCourseCategory } placeholder="Kursname" onChange = { handleNewCategoryChange } />
+                        <input type="text" value= { newCourseCategory } placeholder="neue Kategorie" onChange = { handleNewCategoryChange } />
                     </label>
                 </li>
                 <li>
@@ -53,10 +76,10 @@ export function CourseInputForm (props){
             :
             <ul>
                 <li>
-                    <input type="text" value= { courseTasks.name } placeholder="Kursbeschreibung" onChange = { handleTaskName } />
+                    <input type="text" value= { courseTasks.name } placeholder="Name der Aufgabe" onChange = { handleTaskName } />
                 </li>
                 <li>
-                    <input type="button" value="nächste Aufgabe" onClick={handleSetCourseIDAndChangeViewToTaskInpunput}/>
+                    <input type="button" value="nächste Aufgabe" onClick={handleNextTask}/>
                 </li>
             </ul>
             }

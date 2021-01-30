@@ -11,6 +11,7 @@ export function App (props) {
   const [ selectedTab, setSelectedTab ] = useState('');
   const [ classNames, setClassNames ] = useState(['','','']);
   const [ jsonServerLink, setJsonServerLink ] = useState('courses');
+  const [newCourse, setNewCourse] = useState(null);
 
 
 
@@ -38,8 +39,23 @@ useEffect(() => {
       setIsLoading(false);
       setContent(loadedContent);
     });
-}, []);
+  },[]);
 
+  useEffect(() => {
+    if(newCourse !== null)
+    {
+        fetch("http://localhost:3000/courses", {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json"
+        },
+        body: JSON.stringify(newCourse)
+      })
+    }}, [newCourse]);
+function handleGetNewCourse (aNewCourse) {
+  setNewCourse(aNewCourse);
+}
+console.log(newCourse);
   return (
     <React.Fragment>
         <Header classnames = {classNames}
@@ -48,7 +64,7 @@ useEffect(() => {
                 />
                 <h1>{selectedTab}</h1>
                 {contentComponent}
-        <CourseInputForm content={content} />
+        <CourseInputForm content={content} newCoursData={handleGetNewCourse}/>
     </React.Fragment>
   );
 }

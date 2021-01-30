@@ -1,221 +1,462 @@
 {
-    "accounts":
-        [
+  "accounts": [
+    {
+      "id": 1,
+      "name": "Max Muster",
+      "email": "max@muster.de",
+      "password": "1234",
+      "role": "Teilnehmer"
+    },
+    {
+      "id": 2,
+      "name": "Maria Muster",
+      "email": "maria@muster.de",
+      "password": "1234",
+      "role": "Kursleiter"
+    }
+  ],
+  "courses": [
+    {
+      "id": 1,
+      "category": "Geographie",
+      "name": "Europa",
+      "tasks": [
+        {
+          "id": 1,
+          "name": "Aufgabe 1: Europa",
+          "question": "Wieviele Länder gehören der EU an?",
+          "answers": [
             {
-                "id": 1,
-                "name": "Max Muster",
-                "email": "max@muster.de",
-                "password": "1234",
-                "role": "Teilnehmer"
+              "id": 1,
+              "name": "27",
+              "correct": true
             },
             {
-                "id": 2,
-                "name": "Maria Muster",
-                "email": "maria@muster.de",
-                "password": "1234",
-                "role": "Kursleiter"
+              "id": 2,
+              "name": "25",
+              "correct": false
+            },
+            {
+              "id": 3,
+              "name": "28",
+              "correct": false
             }
-        ],
-    "courses":
-        [
+          ],
+          "type": "OneChoice"
+        }
+      ],
+      "description": "In diesem Kurs behandeln wir Europa"
+    },
+    {
+      "id": 2,
+      "category": "Geographie",
+      "name": "Hauptstädte Europa",
+      "tasks": [
+        {
+          "id": 1,
+          "name": "Aufgabe 1: Dänemark",
+          "question": "Wie heißt die Hauptstadt von Dänemark?",
+          "answers": [
             {
-                "id": 1,
-                "category": "Geographie",   
-                "name": "Europa",
-                "tasks":
-                    [
-                        {
-                            "id": 1,
-                            "name": "Aufgabe 1: Europa",
-                            "question": "Wieviele Länder gehören der EU an?",
-                            "answers": [
-                                {
-                                    "id": 1,
-                                    "name": "27",
-                                    "correct": true
-                                },
-                                {
-                                    "id": 2,
-                                    "name": "25",
-                                    "correct": false
-                                },
-                                {
-                                    "id": 3,
-                                    "name": "28",
-                                    "correct": false
-                                }
-                                ],
-                            "type": "OneChoice"                    
-                        }
-                    ],
-                "description": "In diesem Kurs behandeln wir Europa"
+              "id": 1,
+              "name": "Helsinki",
+              "correct": false
             },
             {
-                "id": 2,
-                "category": "Geographie",
-                "name": "Hauptstädte Europa",
-                "tasks": 
-                    [
-                        {
-                            "id": 1,
-                            "name": "Aufgabe 1: Dänemark",
-                            "question": "Wie heißt die Hauptstadt von Dänemark?",
-                            "answers": [
-                                {
-                                    "id": 1,
-                                    "name": "Helsinki",
-                                    "correct": false
-                                },
-                                {
-                                    "id": 2,
-                                    "name": "Kopenhagen",
-                                    "correct": true
-                                },
-                                {
-                                    "id": 3,
-                                    "name": "Stockholm",
-                                    "correct": false
-                                }],
-                            "type": "OneChoice"  
-                        },                            
-                        {
-                            "id": 2,
-                            "name": "Aufgabe 2: Irland",
-                            "question": "Wie heißt die Hauptstadt von Irland?",
-                            "answers": [
-                                {
-                                    "id": 1,
-                                    "name": "Reykjavík",
-                                    "correct": false
-                                },
-                                {
-                                    "id": 2,
-                                    "name": "Dublin",
-                                    "correct": true
-                                },
-                                {
-                                    "id": 3,
-                                    "name": "Edinburgh",
-                                    "correct": false
-                                }
-
-                                ],
-                            "type": "OneChoice"                          
-                        }
-                    ],
-                "description": "In diesem Kurs behandeln die europäischen Hauptstädte."
+              "id": 2,
+              "name": "Kopenhagen",
+              "correct": true
             },
             {
-                "id": 3,
-                "category": "Mathematik",
-                "name": "Addition",
-                "tasks":
-                    [
-                        {
-                            "id": 1,
-                            "name": "Aufgabe 1: Addition",
-                            "question": "Wieviell ist 1 + 1",
-                            "answers": [
-                                {
-                                    "id": 1,
-                                    "name": "2",
-                                    "correct": true
-                                },
-                                {
-                                    "id": 2,
-                                    "name": "4",
-                                    "correct": false
-                                },
-                                {
-                                    "id": 3,
-                                    "name": "3",
-                                    "correct": false
-                                }],
-                            "type": "OneChoice"  
-                            },                            
-                            {
-                                "id": 2,
-                                "name": "Aufgabe 2: Addition",
-                                "question": "Wie lautet die Summe der Summanten 4 und 9",
-                                "answers": [
-                                    {
-                                        "id": 1,
-                                        "name": "14",
-                                        "correct": false
-                                    },
-                                    {
-                                        "id": 2,
-                                        "name": "13",
-                                        "correct": true
-                                    },
-                                    {
-                                        "id": 3,
-                                        "name": "12",
-                                        "correct": false
-                                    }
-
-                                ],
-                            "type": "OneChoice"                    
-                        }
-
-                    ],
-                "description": "In diesem Kurs wird addiert."
-            },
-            {
-                "id": 4,
-                "category": "Mathematik",
-                "name": "Subtraktion",
-                "tasks":
-                    [
-                        {
-                            "id": 1,
-                            "name": "Aufgabe 1: Subtraktion",
-                            "question": "Wieviell ist 3 - 1",
-                            "answers": [
-                                {
-                                    "id": 1,
-                                    "name": "2",
-                                    "correct": true
-                                },
-                                {
-                                    "id": 2,
-                                    "name": "-2",
-                                    "correct": false
-                                },
-                                {
-                                    "id": 3,
-                                    "name": "1",
-                                    "correct": false
-                                }],
-                            "type": "OneChoice"  
-                        },                            
-                        {
-                                "id": 2,
-                                "name": "Aufgabe 2: Addition",
-                                "question": "Wie lautet der Differenzwert des Minuend 9 und Subtrahend 4",
-                                "answers": [
-                                    {
-                                        "id": 1,
-                                        "name": "-5",
-                                        "correct": false
-                                    },
-                                    {
-                                        "id": 2,
-                                        "name": "5",
-                                        "correct": true
-                                    },
-                                    {
-                                        "id": 3,
-                                        "name": "13",
-                                        "correct": false
-                                    }
-
-                                ],
-                            "type": "OneChoice"                    
-                        }
-
-                    ],
-                "description": "In diesem Kurs wird subtrahiert."
+              "id": 3,
+              "name": "Stockholm",
+              "correct": false
             }
-        ]
+          ],
+          "type": "OneChoice"
+        },
+        {
+          "id": 3,
+          "name": "Aufgabe 2: Irland",
+          "question": "Wie heißt die Hauptstadt von Irland?",
+          "answers": [
+            {
+              "id": 1,
+              "name": "Reykjavík",
+              "correct": false
+            },
+            {
+              "id": 2,
+              "name": "Dublin",
+              "correct": true
+            },
+            {
+              "id": 3,
+              "name": "Edinburgh",
+              "correct": false
+            }
+          ],
+          "type": "OneChoice"
+        }
+      ],
+      "description": "In diesem Kurs behandeln die europäischen Hauptstädte."
+    },
+    {
+      "id": 3,
+      "category": "Mathematik",
+      "name": "Addition",
+      "tasks": [
+        {
+          "id": 1,
+          "name": "Aufgabe 1: Addition",
+          "question": "Wieviell ist 1 + 1",
+          "answers": [
+            {
+              "id": 1,
+              "name": "2",
+              "correct": true
+            },
+            {
+              "id": 2,
+              "name": "4",
+              "correct": false
+            },
+            {
+              "id": 3,
+              "name": "3",
+              "correct": false
+            }
+          ],
+          "type": "OneChoice"
+        },
+        {
+          "id": 2,
+          "name": "Aufgabe 2: Addition",
+          "question": "Wie lautet die Summe der Summanten 4 und 9",
+          "answers": [
+            {
+              "id": 1,
+              "name": "14",
+              "correct": false
+            },
+            {
+              "id": 2,
+              "name": "13",
+              "correct": true
+            },
+            {
+              "id": 3,
+              "name": "12",
+              "correct": false
+            }
+          ],
+          "type": "OneChoice"
+        }
+      ],
+      "description": "In diesem Kurs wird addiert."
+    },
+    {
+      "id": 4,
+      "category": "Mathematik",
+      "name": "Subtraktion",
+      "tasks": [
+        {
+          "id": 1,
+          "name": "Aufgabe 1: Subtraktion",
+          "question": "Wieviell ist 3 - 1",
+          "answers": [
+            {
+              "id": 1,
+              "name": "2",
+              "correct": true
+            },
+            {
+              "id": 2,
+              "name": "-2",
+              "correct": false
+            },
+            {
+              "id": 3,
+              "name": "1",
+              "correct": false
+            }
+          ],
+          "type": "OneChoice"
+        },
+        {
+          "id": 2,
+          "name": "Aufgabe 2: Addition",
+          "question": "Wie lautet der Differenzwert des Minuend 9 und Subtrahend 4",
+          "answers": [
+            {
+              "id": 1,
+              "name": "-5",
+              "correct": false
+            },
+            {
+              "id": 2,
+              "name": "5",
+              "correct": true
+            },
+            {
+              "id": 3,
+              "name": "13",
+              "correct": false
+            }
+          ],
+          "type": "OneChoice"
+        }
+      ],
+      "description": "In diesem Kurs wird subtrahiert."
+    },
+    {
+      "id": 5,
+      "category": "Geographie",
+      "name": "jo",
+      "tasks": [
+        {
+          "id": 0,
+          "name": "Beispielname",
+          "question": "Frage",
+          "answers": [
+            {
+              "id": 0,
+              "name": "eine Antwort",
+              "correct": true
+            }
+          ],
+          "type": "oneChoice"
+        }
+      ],
+      "description": "sfwedf"
+    },
+    {
+      "id": 6,
+      "category": "Biologie",
+      "name": "Mensch",
+      "tasks": [
+        {
+          "id": 0,
+          "name": "Beispielname",
+          "question": "Frage",
+          "answers": [
+            {
+              "id": 0,
+              "name": "eine Antwort",
+              "correct": true
+            }
+          ],
+          "type": "oneChoice"
+        }
+      ],
+      "description": "Menschenkunde"
+    },
+    {
+      "id": 7,
+      "category": "Geographie",
+      "name": "Bla",
+      "tasks": [
+        {
+          "id": 0,
+          "name": "Beispielname",
+          "question": "Frage",
+          "answers": [
+            {
+              "id": 0,
+              "name": "eine Antwort",
+              "correct": true
+            }
+          ],
+          "type": "oneChoice"
+        }
+      ],
+      "description": "Lila"
+    },
+    {
+      "id": 8,
+      "category": "Bautechnik",
+      "name": "Dachformen",
+      "tasks": [
+        {
+          "id": 0,
+          "name": "Beispielname",
+          "question": "Frage",
+          "answers": [
+            {
+              "id": 0,
+              "name": "eine Antwort",
+              "correct": true
+            }
+          ],
+          "type": "oneChoice"
+        }
+      ],
+      "description": "Alles über Dachformen"
+    },
+    {
+      "id": 9,
+      "category": "Biologie",
+      "name": "Tierkunde",
+      "tasks": [
+        {
+          "id": 0,
+          "name": "Beispielname",
+          "question": "Frage",
+          "answers": [
+            {
+              "id": 0,
+              "name": "eine Antwort",
+              "correct": true
+            }
+          ],
+          "type": "oneChoice"
+        },
+        {
+          "name": "B"
+        },
+        {
+          "name": "BL"
+        },
+        {
+          "name": "BLA"
+        },
+        {
+          "name": "BLAB"
+        }
+      ],
+      "description": "tierische Zellen"
+    },
+    {
+      "id": 10,
+      "category": "",
+      "name": "",
+      "tasks": [
+        {
+          "id": 0,
+          "name": "Beispielname",
+          "question": "Frage",
+          "answers": [
+            {
+              "id": 0,
+              "name": "eine Antwort",
+              "correct": true
+            }
+          ],
+          "type": "oneChoice"
+        }
+      ],
+      "description": ""
+    },
+    {
+      "id": 11,
+      "category": "Bautechnik",
+      "name": "Statik",
+      "tasks": [
+        {
+          "id": 0,
+          "name": "Beispielname",
+          "question": "Frage",
+          "answers": [
+            {
+              "id": 0,
+              "name": "eine Antwort",
+              "correct": true
+            }
+          ],
+          "type": "oneChoice"
+        }
+      ],
+      "description": "Tragwerke"
+    },
+    {
+      "id": 12,
+      "category": "Geographie",
+      "name": "Erde",
+      "tasks": [
+        {
+          "id": 0,
+          "name": "Beispielname",
+          "question": "Frage",
+          "answers": [
+            {
+              "id": 0,
+              "name": "eine Antwort",
+              "correct": true
+            }
+          ],
+          "type": "oneChoice"
+        }
+      ],
+      "description": "Kontinente"
+    },
+    {
+      "id": 13,
+      "category": "Mathematik",
+      "name": "Arithmetik",
+      "tasks": [
+        {
+          "id": 0,
+          "name": "Beispielname",
+          "question": "Frage",
+          "answers": [
+            {
+              "id": 0,
+              "name": "eine Antwort",
+              "correct": true
+            }
+          ],
+          "type": "oneChoice"
+        },
+        {
+          "name": "nächste Aufgabe"
+        }
+      ],
+      "description": "Kombinatorik"
+    },
+    {
+      "id": 14,
+      "category": "Geographie",
+      "name": "Kontinente",
+      "tasks": [
+        {
+          "0": {
+            "id": 0,
+            "name": "Beispielname",
+            "question": "Frage",
+            "answers": [
+              {
+                "id": 0,
+                "name": "eine Antwort",
+                "correct": true
+              }
+            ],
+            "type": "oneChoice"
+          },
+          "name": "Eismasse"
+        }
+      ],
+      "description": "Antarktis"
+    },
+    {
+      "id": 15,
+      "category": "Biologie",
+      "name": "Antarktis",
+      "tasks": [
+        {
+          "id": 0,
+          "name": "Pinguine",
+          "question": "Frage",
+          "answers": [
+            {
+              "id": 0,
+              "name": "eine Antwort",
+              "correct": true
+            }
+          ],
+          "type": "oneChoice"
+        }
+      ],
+      "description": "Tiere"
+    }
+  ]
 }
