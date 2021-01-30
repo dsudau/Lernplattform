@@ -11,14 +11,10 @@ export function App (props) {
   const [ selectedTab, setSelectedTab ] = useState('');
   const [ classNames, setClassNames ] = useState(['','','']);
   const [ jsonServerLink, setJsonServerLink ] = useState('courses');
-  const [ searchValue, setSearchValue ] = useState('');
 
-  function handleSearch(event){
-    setSearchValue(event.target.value);
-    console.log(searchValue);
-  }
 
-function handleSelectedButton(event) {
+
+function handleSelectedButton (event) {
   setSelectedTab(event.target.name);
   if(event.target.name == "coursesButton"){
     setClassNames(['clicked','','']);
@@ -35,11 +31,6 @@ function handleSelectedButton(event) {
   }
 }
 
-function handleSearchClick(event){
-  setSearchValue('');
-}
-
-
 useEffect(() => {
   fetch(`http://localhost:3000/${jsonServerLink}`).
     then(response => response.json()).
@@ -49,16 +40,15 @@ useEffect(() => {
     });
 }, []);
 
-
   return (
     <React.Fragment>
         <Header classnames = {classNames}
-                searchcomponent = {<SearchComponent id="headerTab" onClick={handleSearchClick} onChange={handleSearch} value={searchValue} />}
+                searchcomponent = {<SearchComponent/>}
                 onClick = {handleSelectedButton}
                 />
                 <h1>{selectedTab}</h1>
                 {contentComponent}
-        <CourseInputForm />
+        <CourseInputForm content={content} />
     </React.Fragment>
   );
 }

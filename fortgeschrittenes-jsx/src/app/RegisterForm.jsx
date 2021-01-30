@@ -54,6 +54,7 @@ export class RegisterForm extends React.Component {
   handleReset () {
     this.setState(emptyForm);
   }
+  
 
   render () {
     if (this.state.formSubmitted) {
