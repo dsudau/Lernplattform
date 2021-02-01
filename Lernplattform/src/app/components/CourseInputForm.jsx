@@ -51,7 +51,8 @@ export function CourseInputForm (props){
                 "description": courseDescription
               })
             }
-        },[sendToServer])
+        },[sendToServer]);
+
     console.log('ID:' + courseID.value + ' Kategorie: ' + courseCategorySelection + 'Neue Kategorie: ' + newCourseCategory + 'Kursname: ' + courseName + ' Beschreibung: ' + courseDescription);
     return (
         <React.Fragment>

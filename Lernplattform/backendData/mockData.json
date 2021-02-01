@@ -211,33 +211,12 @@
     },
     {
       "id": 5,
-      "category": "Geographie",
-      "name": "jo",
-      "tasks": [
-        {
-          "id": 0,
-          "name": "Beispielname",
-          "question": "Frage",
-          "answers": [
-            {
-              "id": 0,
-              "name": "eine Antwort",
-              "correct": true
-            }
-          ],
-          "type": "oneChoice"
-        }
-      ],
-      "description": "sfwedf"
-    },
-    {
-      "id": 6,
       "category": "Biologie",
       "name": "Mensch",
       "tasks": [
         {
           "id": 0,
-          "name": "Beispielname",
+          "name": "Wirbelsäule",
           "question": "Frage",
           "answers": [
             {
@@ -249,16 +228,37 @@
           "type": "oneChoice"
         }
       ],
-      "description": "Menschenkunde"
+      "description": "Knochen"
+    },
+    {
+      "id": 6,
+      "category": "Bautechnik",
+      "name": "Dächer",
+      "tasks": [
+        {
+          "id": 0,
+          "name": "Walmdach",
+          "question": "Frage",
+          "answers": [
+            {
+              "id": 0,
+              "name": "eine Antwort",
+              "correct": true
+            }
+          ],
+          "type": "oneChoice"
+        }
+      ],
+      "description": "Dachformen"
     },
     {
       "id": 7,
       "category": "Geographie",
-      "name": "Bla",
+      "name": "Griechenland",
       "tasks": [
         {
           "id": 0,
-          "name": "Beispielname",
+          "name": "Gesteinsformationen",
           "question": "Frage",
           "answers": [
             {
@@ -270,16 +270,16 @@
           "type": "oneChoice"
         }
       ],
-      "description": "Lila"
+      "description": "Küsten"
     },
     {
       "id": 8,
-      "category": "Bautechnik",
-      "name": "Dachformen",
+      "category": "Biologie",
+      "name": "Wirbeltiere",
       "tasks": [
         {
           "id": 0,
-          "name": "Beispielname",
+          "name": "Blauwal",
           "question": "Frage",
           "answers": [
             {
@@ -291,16 +291,16 @@
           "type": "oneChoice"
         }
       ],
-      "description": "Alles über Dachformen"
+      "description": "Wale"
     },
     {
       "id": 9,
-      "category": "Biologie",
-      "name": "Tierkunde",
+      "category": "Geographie",
+      "name": "Balkalsee",
       "tasks": [
         {
           "id": 0,
-          "name": "Beispielname",
+          "name": "Fläche",
           "question": "Frage",
           "answers": [
             {
@@ -310,30 +310,18 @@
             }
           ],
           "type": "oneChoice"
-        },
-        {
-          "name": "B"
-        },
-        {
-          "name": "BL"
-        },
-        {
-          "name": "BLA"
-        },
-        {
-          "name": "BLAB"
         }
       ],
-      "description": "tierische Zellen"
+      "description": "Alles über den Blkalsee"
     },
     {
       "id": 10,
-      "category": "",
-      "name": "",
+      "category": "Bautechnik",
+      "name": "Holzbau",
       "tasks": [
         {
           "id": 0,
-          "name": "Beispielname",
+          "name": "Bauweise 1",
           "question": "Frage",
           "answers": [
             {
@@ -345,16 +333,16 @@
           "type": "oneChoice"
         }
       ],
-      "description": ""
+      "description": "Fachwerk"
     },
     {
       "id": 11,
-      "category": "Bautechnik",
-      "name": "Statik",
+      "category": "Biologie",
+      "name": "Krustentiere",
       "tasks": [
         {
           "id": 0,
-          "name": "Beispielname",
+          "name": "Landkrebs",
           "question": "Frage",
           "answers": [
             {
@@ -366,16 +354,16 @@
           "type": "oneChoice"
         }
       ],
-      "description": "Tragwerke"
+      "description": "Krebse"
     },
     {
       "id": 12,
-      "category": "Geographie",
-      "name": "Erde",
+      "category": "Bautechnik",
+      "name": "Mauerwerk",
       "tasks": [
         {
           "id": 0,
-          "name": "Beispielname",
+          "name": "Verband 1",
           "question": "Frage",
           "answers": [
             {
@@ -387,76 +375,7 @@
           "type": "oneChoice"
         }
       ],
-      "description": "Kontinente"
-    },
-    {
-      "id": 13,
-      "category": "Mathematik",
-      "name": "Arithmetik",
-      "tasks": [
-        {
-          "id": 0,
-          "name": "Beispielname",
-          "question": "Frage",
-          "answers": [
-            {
-              "id": 0,
-              "name": "eine Antwort",
-              "correct": true
-            }
-          ],
-          "type": "oneChoice"
-        },
-        {
-          "name": "nächste Aufgabe"
-        }
-      ],
-      "description": "Kombinatorik"
-    },
-    {
-      "id": 14,
-      "category": "Geographie",
-      "name": "Kontinente",
-      "tasks": [
-        {
-          "0": {
-            "id": 0,
-            "name": "Beispielname",
-            "question": "Frage",
-            "answers": [
-              {
-                "id": 0,
-                "name": "eine Antwort",
-                "correct": true
-              }
-            ],
-            "type": "oneChoice"
-          },
-          "name": "Eismasse"
-        }
-      ],
-      "description": "Antarktis"
-    },
-    {
-      "id": 15,
-      "category": "Biologie",
-      "name": "Antarktis",
-      "tasks": [
-        {
-          "id": 0,
-          "name": "Pinguine",
-          "question": "Frage",
-          "answers": [
-            {
-              "id": 0,
-              "name": "eine Antwort",
-              "correct": true
-            }
-          ],
-          "type": "oneChoice"
-        }
-      ],
-      "description": "Tiere"
+      "description": "In diesem Kurs lerne wir die verschieden Mauerverbände."
     }
   ]
 }

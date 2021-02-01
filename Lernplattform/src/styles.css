@@ -3,6 +3,7 @@ body{
     margin: auto;
     font-family: helvetica;
 }
+/*HEADER TABS */
 input#headerTab{
     margin: 0.2em 0 0.2em 0;
     padding:0.3em 2em;
@@ -20,6 +21,8 @@ input#headerTab{
 }
 input#headerTab[type="button"]:hover{
     background-color:#AAAAAA;
+    cursor: pointer;
+    
 }
 input#headerTab[type="button"].clicked{
     background-color:#AAAAAA;
@@ -41,4 +44,101 @@ li#headerTab{
 h1{
     font-size: 3em;
     margin: 0.25em
+}
+/* LOGIN-FORM */
+div.registerForm{
+    width: 60%;
+    height: 80%;
+    border:0.2em solid #000000;
+    border-radius: 3em;
+    text-align: center;
+    padding: 2em 1em 2em 1em;
+}
+h1.registerForm{
+    text-align: center;
+}
+input.registerForm{
+    margin: 0.2em 0 0.2em 0;
+    padding:0.3em 2em;
+    border:0.1em solid #000000;
+    border-radius: 0.2em;
+    width: 60%;
+    font-weight:400;
+    font-size: 2em;
+    color:#000000;
+    background-color:#FFFFFF;
+    text-align:center;
+}
+div.registerFormInner{
+
+    border:0.2em solid #000000;
+    border-radius:5em;
+    width: 80%;
+    height: 100%;
+    color:#000000;
+    background-color:#FFFFFF;
+    text-align: center;
+    position: relative;
+    margin: auto;
+    padding: 3em 0 3em 0;
+}
+input.sendButton{
+    margin: 1em 0.2em 0.2em 0.2em;
+    padding:0.2em;
+    border:0.1em solid #000000;
+    border-radius:0.3em;
+    width: 50%;
+    font-weight:400;
+    font-size: 2em;
+    color:#000000;
+    background-color:#FFFFFF;
+    text-align:center; 
+}
+input.sendButton[type="button"]:hover{
+    background-color:#AAAAAA;
+    cursor: pointer;
+}
+a.registerForm:hover{
+    color:#AAAAAA;
+    cursor: pointer;
+}
+/* courseButton Container */
+
+ul.courseButtonContainer{
+    padding: 0;
+    display: table;
+    table-layout: fixed;
+    width: 100%;
+    border-bottom: 0.2em solid #000000;
+    border-top: 0.2em solid #000000;
+}
+li.courseButtonContainer{
+    width:48%;
+    float:left;
+    list-style-type: none;
+    display: table-cell;
+    padding: 1%;
+}
+a.courseButtonContainer:hover{
+    cursor: pointer;
+}
+div.courseButtonContainer{
+    padding: 2%;
+    border:0.2em solid #000000;
+    border-radius:3em;
+    width: 95%;
+    min-height: 21em;
+    font-weight:400;
+    color:#000000;
+    background-color:#FFFFFF;
+    text-align:left;
+}
+div.courseButtonContainer:hover{
+    background-color:#AAAAAA;
+}
+b.courseButtonContainer{
+    margin-right: 1em;
+}
+p.courseButtonContainer{
+    display: inline;
 }
