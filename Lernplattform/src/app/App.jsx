@@ -9,31 +9,29 @@ export function App (props) {
   const [ content, setContent ] = useState([]);
   const [ contentComponent, setContentComponent] = useState(<React.Fragment></React.Fragment>);
   const [ isLoading, setIsLoading ] = useState(true);
-  const [ selectedTab, setSelectedTab ] = useState('');
+  const [ selectedTab, setSelectedTab ] = useState("currentCourses");
   const [ classNames, setClassNames ] = useState(['','','']);
   const [ jsonServerLink, setJsonServerLink ] = useState('courses');
   const [ newCourse, setNewCourse ] = useState(null);
+  const [ newAccount, setNewAccount ] = useState(null);
 
 function handleSelectedButton (event) {
   setSelectedTab(event.target.name);
   if(event.target.name == "coursesButton"){
     setClassNames(['clicked','','']);
     setJsonServerLink('courses');
-    setContentComponent(<React.Fragment></React.Fragment>);
   }else if(event.target.name == "catalogButton"){
     setClassNames(['','clicked','']);
     setJsonServerLink('courses');
-    setContentComponent(<Content content={content} selectedtab={event.target.name} />);
   }else if(event.target.name == "forumButton"){
     setClassNames(['','','clicked']);
     setJsonServerLink('courses');
-    setContentComponent(<React.Fragment></React.Fragment>);
   }else if(event.target.name == "signInButton"){
+    setClassNames(['','','']);
     setJsonServerLink('accounts');
-    setContentComponent(<Content content={content} handleSelectedTabByParent={handleSelectedTab} selectedtab={event.target.name} />)
   }else if(event.target.name == "registerButton"){
+    setClassNames(['','','']);
     setJsonServerLink('accounts');
-    setContentComponent(<Content content={content} handleSelectedTabByParent={handleSelectedTab} selectedtab={event.target.name} />)
   }
 }
 
@@ -43,8 +41,21 @@ useEffect(() => {
     then(loadedContent => {
       setIsLoading(false);
       setContent(loadedContent);
+      if(selectedTab == "currentCourses"){
+        setContentComponent(<Content content={loadedContent} selectedtab={selectedTab} />);
+      }else if(selectedTab == "coursesButton"){
+        setContentComponent(<React.Fragment></React.Fragment>);
+      }else if(selectedTab == "catalogButton"){
+        setContentComponent(<Content content={loadedContent} selectedtab={selectedTab} />);
+      }else if(selectedTab == "forumButton"){
+        setContentComponent(<React.Fragment></React.Fragment>);
+      }else if(selectedTab == "signInButton"){
+        setContentComponent(<Content content={loadedContent} sendNewAccountToServerByChild={handleSendNewAccountToServer} handleSelectedTabByChild={handleSelectedTab} selectedtab={selectedTab} />)
+      }else if(selectedTab == "registerButton"){
+        setContentComponent(<Content content={loadedContent} sendNewAccountToServerByChild={handleSendNewAccountToServer} handleSelectedTabByChild={handleSelectedTab} selectedtab={selectedTab} />)
+      }
     });
-  },[newCourse, selectedTab]);
+  },[newCourse, selectedTab, newAccount]);
 
   useEffect(() => {
     if(newCourse !== null)
@@ -55,22 +66,48 @@ useEffect(() => {
             "Content-Type": "application/json"
           },
           body: JSON.stringify(newCourse)
-      })
+      });
       setNewCourse(null);
-    }}, [newCourse]);
+  }}, [newCourse]);
 
-function handleGetNewCourse (aNewCourse) {
-  setNewCourse(aNewCourse);
-  content.map((course) => {
-    if(course.id === aNewCourse.id){
-      setNewCourse(null);
-    };
-  });
-}
-function handleSelectedTab (newSelectedTab){
-  setSelectedTab(newSelectedTab);
-  setContentComponent(<Content content = {content} handleSelectedTabByParent={handleSelectedTab} selectedtab={newSelectedTab} />);
-}
+  useEffect(() => {
+    if(newAccount !== null)
+    {
+        fetch("http://localhost:3000/accounts", {
+          method: "POST",
+          headers: {
+            "Content-Type": "application/json"
+          },
+          body: JSON.stringify(newAccount)
+      });
+      setNewAccount(null);
+  }}, [newAccount]);
+
+  function handleSendNewAccountToServer (aNewAccount) {
+    setNewAccount(aNewAccount);
+    content.map((account) => {
+      if(account.id == aNewAccount.id){
+        setNewAccount(null);
+      };
+    });
+  }
+
+  function handleGetNewCourse (aNewCourse) {
+    setNewCourse(aNewCourse);
+    content.map((course) => {
+      if(course.id == aNewCourse.id){
+        setNewCourse(null);
+      };
+    });
+  }
+
+  function handleSelectedTab (newSelectedTab){
+    setSelectedTab(newSelectedTab);
+    if(newSelectedTab == "currentCourses"){
+      setJsonServerLink('courses');
+    }
+  }
+
   return (
     <React.Fragment>
         <Header classnames = {classNames}

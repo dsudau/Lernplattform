@@ -45,8 +45,8 @@ h1{
     font-size: 3em;
     margin: 0.25em
 }
-/* LOGIN-FORM */
-div.registerForm{
+/* REGISTER-LOGIN-FORM */
+div.registerLoginForm{
     width: 60%;
     height: 80%;
     border:0.2em solid #000000;
@@ -54,10 +54,10 @@ div.registerForm{
     text-align: center;
     padding: 2em 1em 2em 1em;
 }
-h1.registerForm{
+h1.registerLoginForm{
     text-align: center;
 }
-input.registerForm{
+input.registerLoginForm{
     margin: 0.2em 0 0.2em 0;
     padding:0.3em 2em;
     border:0.1em solid #000000;
@@ -98,7 +98,7 @@ input.sendButton[type="button"]:hover{
     background-color:#AAAAAA;
     cursor: pointer;
 }
-a.registerForm:hover{
+a.registerLoginForm:hover{
     color:#AAAAAA;
     cursor: pointer;
 }
@@ -119,9 +119,6 @@ li.courseButtonContainer{
     display: table-cell;
     padding: 1%;
 }
-a.courseButtonContainer:hover{
-    cursor: pointer;
-}
 div.courseButtonContainer{
     padding: 2%;
     border:0.2em solid #000000;
@@ -135,6 +132,7 @@ div.courseButtonContainer{
 }
 div.courseButtonContainer:hover{
     background-color:#AAAAAA;
+    cursor: pointer;
 }
 b.courseButtonContainer{
     margin-right: 1em;

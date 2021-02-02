@@ -1,9 +1,9 @@
-import React from 'react';
+import React, {useEffect, useState} from 'react';
 
 export function Course (props){
-    console.log(props.courses);
+    const [courseView, setCourseView] = useState(<React.Fragment></React.Fragment>);
     function CourseList () {
-        return (props.courses.map((course) => (
+        return (<ul>{props.courses.map((course) => (
             <li key = { `course-${course.id}` } >
                 <p>{course.category}</p>
                 <input type="text" readOnly={true} value={course.name} />
@@ -19,7 +19,7 @@ export function Course (props){
                     })}
                 <p>{course.description}</p>
             </li>
-        )));
+        ))}</ul>);
     }
 
     function CurrentCourses () {
@@ -28,7 +28,7 @@ export function Course (props){
         <ul className="courseButtonContainer">
          {props.courses.map((course) => (
         <li className="courseButtonContainer" key = { `course-${course.id}` } >
-            <a className="courseButtonContainer">
+            <a className="courseButtonContainer" onClick={event => handleSelechtedCourse(event, course.id)}>
             <div className="courseButtonContainer">
                 <h1 className="courseButtonContainer">{course.name}</h1>
                 <b className="courseButtonContainer">Lernziele: </b>
@@ -39,13 +39,22 @@ export function Course (props){
         ))}
     </ul></React.Fragment>);
     }
+    function handleSelechtedCourse(event, id){
+        console.log(id);
+    }
+
+    useEffect(() => {
+        if(props.selectedtab == 'currentCourses'){
+            setCourseView(<CurrentCourses />);
+        }
+        if(props.selectedtab == 'catalogButton'){
+            setCourseView(<CourseList />);
+        }
+    },[props.selectedtab, props.content]);
 
     return (
         <React.Fragment>
-            <ul>
-                <CourseList />
-            </ul>
-            <CurrentCourses />
+            {courseView}
         </React.Fragment>
     );
 }

@@ -52,8 +52,6 @@ export function CourseInputForm (props){
               })
             }
         },[sendToServer]);
-
-    console.log('ID:' + courseID.value + ' Kategorie: ' + courseCategorySelection + 'Neue Kategorie: ' + newCourseCategory + 'Kursname: ' + courseName + ' Beschreibung: ' + courseDescription);
     return (
         <React.Fragment>
             { showResults ?  

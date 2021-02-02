@@ -6,7 +6,6 @@ export function SearchComponent (props) {
   }
   function handleSearch(event){
     setSearchValue(event.target.value);
-    console.log(searchValue);
   } 
   const [searchValue, setSearchValue] = useState('');
     return (
