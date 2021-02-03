@@ -1,7 +1,12 @@
 import React, {useEffect, useState} from 'react';
+import { sumExistingCategories } from './services/courseService';
+import { CategorySelect } from './formElements/CategorySelect';
+import { Anwer } from './Answer'
 
 export function Course (props){
     const [courseView, setCourseView] = useState(<React.Fragment></React.Fragment>);
+    const [courseCategorySelection, setCourseCategorySelection] = useState('Mathematik');
+    const [selectCoursID, setSelectdCourseID] = useState(0);
     function CourseList () {
         return (<ul>{props.courses.map((course) => (
             <li key = { `course-${course.id}` } >
@@ -24,23 +29,36 @@ export function Course (props){
 
     function CurrentCourses () {
         return (<React.Fragment>
-        <h1>Aktuelle Kurse</h1>
+        <div id="courseButtonContainer">
+            <h1 className="courseButtonContainer">Aktuelle Kurse</h1>
+            <CategorySelect selectedCategory={callbackSelectedCategory} categories={sumExistingCategories(props.courses)} />
+        </div>
         <ul className="courseButtonContainer">
-         {props.courses.map((course) => (
-        <li className="courseButtonContainer" key = { `course-${course.id}` } >
-            <a className="courseButtonContainer" onClick={event => handleSelechtedCourse(event, course.id)}>
+         {props.courses.map((course) => {
+             if(courseCategorySelection == course.category)
+            return(<li className="courseButtonContainer" key = { `course-${course.id}` } >
+            <a className="courseButtonContainer" onClick={event => handleSelectedCourse(event, course.id)}>
             <div className="courseButtonContainer">
                 <h1 className="courseButtonContainer">{course.name}</h1>
                 <b className="courseButtonContainer">Lernziele: </b>
                 <p className="courseButtonContainer" >{course.description}</p>
             </div>
             </a>
-        </li>
-        ))}
+        </li>)
+        })}
+        
     </ul></React.Fragment>);
     }
-    function handleSelechtedCourse(event, id){
-        console.log(id);
+    
+    const callbackSelectedCategory = (selectedValue) => {
+        setCourseCategorySelection(selectedValue);
+    }
+
+    function handleSelectedCourse(event, id){
+        setSelectdCourseID(id);
+    }
+    function SelectedCourse () {
+        return (<Answer selectedcourseid={selectedCourseID} />);
     }
 
     useEffect(() => {
@@ -50,7 +68,7 @@ export function Course (props){
         if(props.selectedtab == 'catalogButton'){
             setCourseView(<CourseList />);
         }
-    },[props.selectedtab, props.content]);
+    },[props.selectedtab, props.content, courseCategorySelection]);
 
     return (
         <React.Fragment>

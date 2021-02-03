@@ -55,30 +55,29 @@ export function CourseInputForm (props){
     return (
         <React.Fragment>
             { showResults ?  
-            <ul>
-                <li>
+            <ul className="courseInputForm">
+                <li className="courseInputForm">
                     <CategorySelect selectedCategory={callbackSelectedCategory} categories={sumExistingCategories(props.content)} />
-                    <label>Kategorie nicht vorhanden? Erstelle eine neue:
-                        <input type="text" value= { newCourseCategory } placeholder="neue Kategorie" onChange = { handleNewCategoryChange } />
-                    </label>
+                    <p className="courseInputForm">Kategorie nicht vorhanden? Erstelle eine neue:</p>
+                    <input className="courseInputForm" type="text" value= { newCourseCategory } placeholder="neue Kategorie" onChange = { handleNewCategoryChange } />
                 </li>
-                <li>
-                    <input type="text" value= { courseName } placeholder="Kursname" onChange = { handleNameChange } />
+                <li className="courseInputForm">
+                    <input className="courseInputForm" type="text" value= { courseName } placeholder="Kursname" onChange = { handleNameChange } />
                 </li>
-                <li>
-                    <input type="text" value= { courseDescription } placeholder="Kursbeschreibung" onChange = { handleDescriptionChange } />
+                <li className="courseInputForm">
+                    <input className="courseInputForm" type="text" value= { courseDescription } placeholder="Kursbeschreibung" onChange = { handleDescriptionChange } />
                 </li>
-                <li>
-                    <input type="button" value="weiter" onClick={handleSetCourseIDAndChangeViewToTaskInpunput}/>
+                <li className="courseInputForm">
+                    <input className="courseInputForm" type="button" value="weiter" onClick={handleSetCourseIDAndChangeViewToTaskInpunput}/>
                 </li>
             </ul>
             :
             <ul>
-                <li>
-                    <input type="text" value= { courseTasks.name } placeholder="Name der Aufgabe" onChange = { handleTaskName } />
+                <li className="courseInputForm">
+                    <input className="courseInputForm" type="text" value= { courseTasks.name } placeholder="Name der Aufgabe" onChange = { handleTaskName } />
                 </li>
-                <li>
-                    <input type="button" value="nächste Aufgabe" onClick={handleNextTask}/>
+                <li className="courseInputForm">
+                    <input className="courseInputForm" type="button" value="nächste Aufgabe" onClick={handleNextTask}/>
                 </li>
             </ul>
             }

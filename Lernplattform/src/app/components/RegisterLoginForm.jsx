@@ -99,8 +99,10 @@ export function RegisterLoginForm (props) {
             props.accounts.map((account) => {
                 if(userOrEmail == account.name && !validUserNameEmail){
                     setValidUserNameEmail(true);
+                    setUserName(account.name);
                 }else if(userOrEmail == account.email && !validUserNameEmail){
                     setValidUserNameEmail(true);
+                    setUserName(account.name);
                 }
             });
         }
@@ -117,6 +119,7 @@ export function RegisterLoginForm (props) {
     useEffect(() => {
         if(validUserNameEmail && validPassword){
             props.setViewAfterValidation("currentCourses");
+            props.loggedInUserByRegisterLoginForm(userName);
         }
     },[validPassword]);
 

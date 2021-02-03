@@ -5,6 +5,7 @@ import { SearchComponent } from './components/SearchComponent';
 import { CourseInputForm } from './components/CourseInputForm';
 
 
+
 export function App (props) {
   const [ content, setContent ] = useState([]);
   const [ contentComponent, setContentComponent] = useState(<React.Fragment></React.Fragment>);
@@ -14,6 +15,8 @@ export function App (props) {
   const [ jsonServerLink, setJsonServerLink ] = useState('courses');
   const [ newCourse, setNewCourse ] = useState(null);
   const [ newAccount, setNewAccount ] = useState(null);
+  const [ registerLoginButtonsVisible, setRegisterLoginButtonsVisible] = useState(true);
+  const [ loggedInUser, setLoggedInUser] = useState('');
 
 function handleSelectedButton (event) {
   setSelectedTab(event.target.name);
@@ -50,13 +53,23 @@ useEffect(() => {
       }else if(selectedTab == "forumButton"){
         setContentComponent(<React.Fragment></React.Fragment>);
       }else if(selectedTab == "signInButton"){
-        setContentComponent(<Content content={loadedContent} sendNewAccountToServerByChild={handleSendNewAccountToServer} handleSelectedTabByChild={handleSelectedTab} selectedtab={selectedTab} />)
+        setContentComponent(<Content
+          content={loadedContent}
+          sendNewAccountToServerByChild={handleSendNewAccountToServer}
+          handleSelectedTabByChild={handleSelectedTab}
+          selectedtab={selectedTab}
+          loggedInUserByChild={handleSetLoggedInUser}
+        />)
       }else if(selectedTab == "registerButton"){
-        setContentComponent(<Content content={loadedContent} sendNewAccountToServerByChild={handleSendNewAccountToServer} handleSelectedTabByChild={handleSelectedTab} selectedtab={selectedTab} />)
+        setContentComponent(<Content
+          content={loadedContent}
+          sendNewAccountToServerByChild={handleSendNewAccountToServer}
+          handleSelectedTabByChild={handleSelectedTab}
+          selectedtab={selectedTab} 
+        />)
       }
     });
   },[newCourse, selectedTab, newAccount]);
-
   useEffect(() => {
     if(newCourse !== null)
     {
@@ -108,13 +121,19 @@ useEffect(() => {
     }
   }
 
+  function handleSetLoggedInUser (user){
+    setLoggedInUser(user);
+    setRegisterLoginButtonsVisible(false);
+  }
+
   return (
     <React.Fragment>
         <Header classnames = {classNames}
                 searchcomponent = {<SearchComponent/>}
                 onClick = {handleSelectedButton}
+                registerloginbuttonsvisible = {registerLoginButtonsVisible}
+                loggedinuser={loggedInUser}
                 />
-                <h1>{selectedTab}</h1>
                 {contentComponent}
         <CourseInputForm content={content} newCoursData={handleGetNewCourse}/>
     </React.Fragment>

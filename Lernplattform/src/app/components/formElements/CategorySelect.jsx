@@ -10,10 +10,11 @@ export function CategorySelect (props) {
         return <option key={`category-${index}`} value={category}>{category}</option>
     });
     return (
-        <label> Kategorie wählen:
-            <select name = {selectedValue} value = {selectedValue} onChange={ handleCategorySelect }>
+        <React.Fragment>
+            <p className="courseInputForm">Kategorie wählen: </p>
+            <select className="courseInputForm" name = {selectedValue} value = {selectedValue} onChange={ handleCategorySelect }>
                 {selectOptions}
             </select>
-        </label>
+        </React.Fragment>
     );
 }

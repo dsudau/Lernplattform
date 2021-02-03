@@ -45,6 +45,64 @@ h1{
     font-size: 3em;
     margin: 0.25em
 }
+/*LoginRegisterArea*/
+input.register{
+    margin: 0.4em 0.4em 0.2em 0;
+    padding:0.1em 0.5em;
+    border:0.1em solid #000000;
+    border-radius:0.3em;
+    width: 15%;
+    font-weight:400;
+    font-size: 2em;
+    color:#000000;
+    background-color:#FFFFFF;
+    text-align:center;
+    float:right;
+}
+input.register{
+    box-sizing: border-box;
+}
+input.register[type="button"]:hover{
+    background-color:#AAAAAA;
+    cursor: pointer;
+}
+input.signin{
+    margin: 0.2em 0 0.2em 0;
+    padding:0.3em 2em;
+    border:0.1em solid #000000;
+    border-radius:0.3em;
+    width: 20%;
+    font-weight:400;
+    font-size: 2em;
+    color:#000000;
+    background-color:#FFFFFF;
+    text-align:center;
+    float:right;
+}
+input.signin{
+    box-sizing: border-box;
+}
+input.signin[type="button"]:hover{
+    background-color:#AAAAAA;
+    cursor: pointer;
+}
+ul.registerLogin{
+    width: 98%;
+    background-color:#FFFFFF;
+    float:right;
+    padding:0;
+}
+li.registerLogin{
+    float:right;
+    width:100%;
+    list-style-type: none;
+}
+h1#registerLogin{
+    display:inline;
+    float:left;
+    margin-top: 0.2em;
+    margin-left: 0;
+}
 /* REGISTER-LOGIN-FORM */
 div.registerLoginForm{
     width: 60%;
@@ -53,6 +111,7 @@ div.registerLoginForm{
     border-radius: 3em;
     text-align: center;
     padding: 2em 1em 2em 1em;
+    margin-left: 19%;
 }
 h1.registerLoginForm{
     text-align: center;
@@ -70,7 +129,6 @@ input.registerLoginForm{
     text-align:center;
 }
 div.registerFormInner{
-
     border:0.2em solid #000000;
     border-radius:5em;
     width: 80%;
@@ -79,7 +137,7 @@ div.registerFormInner{
     background-color:#FFFFFF;
     text-align: center;
     position: relative;
-    margin: auto;
+    margin-left: auto;
     padding: 3em 0 3em 0;
 }
 input.sendButton{
@@ -134,9 +192,91 @@ div.courseButtonContainer:hover{
     background-color:#AAAAAA;
     cursor: pointer;
 }
+div#courseButtonContainer{
+    margin-left: 2%;
+}
 b.courseButtonContainer{
     margin-right: 1em;
 }
 p.courseButtonContainer{
     display: inline;
+}
+
+/* CoursInputForm */
+
+ul.courseInputForm{
+    padding: 2%;
+    border:0.2em solid #000000;
+    border-radius:3em;
+    width: 95%;
+    min-height: 21em;
+    font-weight:400;
+    color:#000000;
+    background-color:#FFFFFF;
+    text-align:left;
+}
+li.courseInputForm{
+    list-style-type: none;
+}
+input.courseInputForm{
+    margin: 1em 0.2em 0.2em 0;
+    padding:0.2em;
+    border:0.1em solid #000000;
+    border-radius:0.3em;
+    width: 50%;
+    font-weight:400;
+    font-size: 2em;
+    color:#000000;
+    background-color:#FFFFFF;
+    text-align:center; 
+}
+select.courseInputForm{
+    padding: 2%;
+    height: auto;
+    border:0.1em solid #000000;
+    border-radius: 0.7em;
+    width: 35%;
+    color:#000000;
+    background-color:#FFFFFF;
+    text-align:left;
+    font-size: 2em;
+    background-image:
+    linear-gradient(45deg, transparent 50%, black 50%),
+    linear-gradient(135deg, black 50%, transparent 50%),
+    radial-gradient(#AAAAAA 70%, transparent 72%);
+    background-position:
+    calc(100% - 50px) calc(1.1em + 10px),
+    calc(100% - 25px) calc(1.1em + 10px),
+    calc(100% - 0.6em) .7em;
+    background-size:
+    25px 25px,
+    25px 25px,
+    2em 2em;
+    background-repeat: no-repeat;
+    -webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    box-sizing: border-box;
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    appearance: none;
+}
+select.courseInputForm:focus {
+    background-image:
+      linear-gradient(45deg, white 50%, transparent 50%),
+      linear-gradient(135deg, transparent 50%, white 50%),
+      radial-gradient(#AAAAAA 70%, transparent 72%);
+    background-position:
+    calc(100% - 25px) calc(0.9em + 10px),
+    calc(100% - 50px) calc(0.9em + 10px),
+    calc(100% - 0.6em) .7em;
+    background-size:
+    25px 25px,
+    25px 25px,
+    2em 2em;
+    background-repeat: no-repeat;
+    border-color: #AAAAAA;
+    outline: 0;
+  }
+p.courseInputForm{
+    font-size: 2em;
 }

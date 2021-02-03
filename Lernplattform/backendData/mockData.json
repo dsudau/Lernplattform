@@ -20,6 +20,13 @@
       "email": "maria@muster.es",
       "password": "123",
       "role": "Teilnehmer"
+    },
+    {
+      "id": 4,
+      "name": "Bernd",
+      "email": "bern@test.de",
+      "password": "12345",
+      "role": "Teilnehmer"
     }
   ],
   "courses": [
