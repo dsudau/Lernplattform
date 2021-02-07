@@ -1,0 +1,14 @@
+body{
+    max-width: 80%;
+    margin: auto;
+    font-family: helvetica;
+}
+div.header{
+    border: 1px solid black
+}
+div.content{
+    border: 1px solid black
+}
+div.footer{
+    border: 1px solid black
+}

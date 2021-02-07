@@ -103,6 +103,26 @@ h1#registerLogin{
     margin-top: 0.2em;
     margin-left: 0;
 }
+input.logOut{
+    margin: 0.4em 0.4em 0.2em 0;
+    padding:0.1em 0.5em;
+    border:0.1em solid #000000;
+    border-radius:0.3em;
+    width: 15%;
+    font-weight:400;
+    font-size: 2em;
+    color:#000000;
+    background-color:#FFFFFF;
+    text-align:center;
+    float:right;
+}
+input.logOut{
+    box-sizing: border-box;
+}
+input.logOut[type="button"]:hover{
+    background-color:#AAAAAA;
+    cursor: pointer;
+}
 /* REGISTER-LOGIN-FORM */
 div.registerLoginForm{
     width: 60%;

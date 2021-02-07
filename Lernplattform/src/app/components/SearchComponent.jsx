@@ -1,21 +1,21 @@
-import React, { useState } from 'react';
+import React, { useState } from "react";
 
-export function SearchComponent (props) {
+export function SearchComponent(props) {
   function handleSearchClick(event) {
-    setSearchValue('');
+    setSearchValue("");
   }
-  function handleSearch(event){
+  function handleSearch(event) {
     setSearchValue(event.target.value);
-  } 
-  const [searchValue, setSearchValue] = useState('');
-    return (
-      <input 
-          type = "text"
-          value = { searchValue }
-          onChange = { handleSearch }
-          onClick = { handleSearchClick }
-          placeholder = "Suche"
-          id="headerTab"
-      />
-    );
+  }
+  const [searchValue, setSearchValue] = useState("");
+  return (
+    <input
+      type="text"
+      value={searchValue}
+      onChange={handleSearch}
+      onClick={handleSearchClick}
+      placeholder="Suche"
+      id="headerTab"
+    />
+  );
 }

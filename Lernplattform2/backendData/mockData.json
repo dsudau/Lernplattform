@@ -1,0 +1,361 @@
+{
+  "roles": [
+    { "id": 1, "name": "author" },
+    { "id": 2, "name": "student" },
+    { "id": 3, "name": "administrator" }
+  ],
+
+  "accounts": [
+    {
+      "id": 1,
+      "name": "Max Muster",
+      "email": "max@muster.de",
+      "password": "1234",
+      "role": 2
+    },
+    {
+      "id": 2,
+      "name": "Maria Muster",
+      "email": "maria@muster.de",
+      "password": "1234",
+      "role": 1
+    }
+  ],
+
+  "categories": [
+    {
+      "id": 1,
+      "name": "Geographie"
+    },
+    {
+      "id": 2,
+      "name": "Mathematik"
+    }
+  ],
+
+  "courses": [
+    {
+      "id": 1,
+      "category": 1,
+      "name": "Europa",
+      "tasks": [{ "id": 1 }],
+      "description": "In diesem Kurs behandeln wir Europa",
+      "author": 2,
+      "publish": "2021-02-06T16:59:43.067Z"
+    },
+    {
+      "id": 2,
+      "category": 1,
+      "name": "Hauptstädte Europa",
+      "tasks": [{ "id": 2 }, { "id": 3 }],
+      "description": "In diesem Kurs behandeln die europäischen Hauptstädte.",
+      "author": 2,
+      "publish": "2021-02-06T16:59:43.067Z"
+    },
+    {
+      "id": 3,
+      "category": 2,
+      "name": "Addition",
+      "tasks": [{ "id": 4 }, { "id": 5 }],
+      "description": "In diesem Kurs wird addiert.",
+      "author": 2,
+      "publish": "2021-02-06T16:59:43.067Z"
+    },
+    {
+      "id": 4,
+      "category": 2,
+      "name": "Subtraktion",
+      "tasks": [{ "id": 6 }, { "id": 7 }],
+      "description": "In diesem Kurs wird subtrahiert.",
+      "author": 2,
+      "publish": "2021-02-06T16:59:43.067Z"
+    }
+  ],
+
+  "tasks": [
+    {
+      "id": 1,
+      "name": "Aufgabe 1: Europa",
+      "question": "Wieviele Länder gehören der EU an?",
+      "answers": [{ "id": 1 }, { "id": 2 }, { "id": 3 }],
+      "type": 2,
+      "available": "2021-10-06T16:12:51.559Z",
+      "publish": true
+    },
+    {
+      "id": 2,
+      "name": "Aufgabe 1: Dänemark",
+      "question": "Wie heißt die Hauptstadt von Dänemark?",
+      "answers": [{ "id": 4 }, { "id": 5 }, { "id": 6 }],
+      "type": 2,
+      "available": "2021-10-06T16:12:51.559Z",
+      "publish": true
+    },
+    {
+      "id": 3,
+      "name": "Aufgabe 2: Irland",
+      "question": "Wie heißt die Hauptstadt von Irland?",
+      "answers": [{ "id": 7 }, { "id": 8 }, { "id": 9 }],
+      "type": 2,
+      "available": "2021-10-06T16:12:51.559Z",
+      "publish": true
+    },
+    {
+      "id": 4,
+      "name": "Aufgabe 1: Addition",
+      "question": "Wieviell ist 1 + 1",
+      "answers": [{ "id": 1 }],
+      "type": 1,
+      "available": "2021-10-06T16:12:51.559Z",
+      "publish": true
+    },
+    {
+      "id": 5,
+      "name": "Aufgabe 2: Addition",
+      "question": "Wie lautet die Summe der Summanten 4 und 9",
+      "answers": [{ "id": 2 }],
+      "type": 1,
+      "available": "2021-10-06T16:12:51.559Z",
+      "publish": true
+    },
+    {
+      "id": 6,
+      "name": "Aufgabe 1: Subtraktion",
+      "question": "Wieviell ist 3 - 1",
+      "answers": [{ "id": 3 }],
+      "type": 1,
+      "available": "2021-10-06T16:12:51.559Z",
+      "publish": true
+    },
+    {
+      "id": 7,
+      "name": "Aufgabe 2: Subtraktion",
+      "question": "Wie lautet der Differenzwert des Minuend 9 und Subtrahend 4",
+      "answers": [{ "id": 4 }],
+      "type": 1,
+      "available": "2021-10-06T16:12:51.559Z",
+      "publish": true
+    }
+  ],
+
+  "answerTypes": [
+    {
+      "id": 1,
+      "name": "TextChoice"
+    },
+    {
+      "id": 2,
+      "name": "ChoiceAnswer"
+    }
+  ],
+
+  "answers": [
+    {
+      "id": 1,
+      "type": 2,
+      "answerIDByType": 1
+    },
+    {
+      "id": 2,
+      "type": 2,
+      "answerIDByType": 2
+    },
+    {
+      "id": 3,
+      "type": 2,
+      "answerIDByType": 3
+    },
+    {
+      "id": 4,
+      "type": 2,
+      "answerIDByType": 4
+    },
+    {
+      "id": 5,
+      "type": 2,
+      "answerIDByType": 5
+    },
+    {
+      "id": 6,
+      "type": 2,
+      "answerIDByType": 6
+    },
+    {
+      "id": 7,
+      "type": 2,
+      "answerIDByType": 7
+    },
+    {
+      "id": 8,
+      "type": 2,
+      "answerIDByType": 8
+    },
+    {
+      "id": 9,
+      "type": 2,
+      "answerIDByType": 9
+    },
+    {
+      "id": 10,
+      "type": 1,
+      "answerIDByType": 1
+    },
+    {
+      "id": 11,
+      "type": 1,
+      "answerIDByType": 2
+    },
+    {
+      "id": 12,
+      "type": 1,
+      "answerIDByType": 3
+    },
+    {
+      "id": 13,
+      "type": 1,
+      "answerIDByType": 4
+    }
+  ],
+
+  "choiceAnswers": [
+    {
+      "id": 1,
+      "name": "27",
+      "correct": true
+    },
+    {
+      "id": 2,
+      "name": "25",
+      "correct": false
+    },
+    {
+      "id": 3,
+      "name": "28",
+      "correct": false
+    },
+    {
+      "id": 4,
+      "name": "Helsinki",
+      "correct": false
+    },
+    {
+      "id": 5,
+      "name": "Kopenhagen",
+      "correct": true
+    },
+    {
+      "id": 6,
+      "name": "Stockholm",
+      "correct": false
+    },
+    {
+      "id": 7,
+      "name": "Reykjavík",
+      "correct": false
+    },
+    {
+      "id": 8,
+      "name": "Dublin",
+      "correct": true
+    },
+    {
+      "id": 9,
+      "name": "Edinburgh",
+      "correct": false
+    }
+  ],
+
+  "textAnswers": [
+    {
+      "id": 1,
+      "name": ""
+    },
+    {
+      "id": 2,
+      "name": ""
+    },
+    {
+      "id": 3,
+      "name": ""
+    },
+    {
+      "id": 4,
+      "name": ""
+    }
+  ],
+
+  "subscriptions": [
+    {
+      "id": 1,
+      "account": 1,
+      "course": 1
+    },
+    {
+      "id": 2,
+      "account": 1,
+      "course": 3
+    }
+  ],
+
+  "progresses": [
+    {
+      "id": 1,
+      "subscription": 1,
+      "solvedTask": 1,
+      "answers": [
+        {
+          "id": 1
+        }
+      ],
+      "date": ""
+    },
+    {
+      "id": 2,
+      "subscription": 2,
+      "solvedTask": 1,
+      "answers": [
+        {
+          "id": 1
+        }
+      ],
+      "date": ""
+    },
+    {
+      "id": 3,
+      "subscriptionID": 2,
+      "solvedTask": 2,
+      "answers": [
+        {
+          "id": 2
+        }
+      ],
+      "date": ""
+    }
+  ],
+
+  "answersByStudent": [
+    {
+      "id": 1,
+      "name": "",
+      "answer": 1
+    }
+  ],
+
+  "corrections": [
+    {
+      "id": 1,
+      "task": 1,
+      "comment": "",
+      "points": 12
+    }
+  ],
+
+  "gradings": [
+    {
+      "id": 1,
+      "correction": 1,
+      "grade": 2,
+      "date": ""
+    }
+  ]
+}

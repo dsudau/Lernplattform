@@ -13,27 +13,6 @@
       "email": "maria@muster.de",
       "password": "1234",
       "role": "Kursleiter"
-    },
-    {
-      "id": 3,
-      "name": "maria22",
-      "email": "maria@muster.es",
-      "password": "123",
-      "role": "Teilnehmer"
-    },
-    {
-      "id": 4,
-      "name": "Bernd",
-      "email": "bern@test.de",
-      "password": "12345",
-      "role": "Teilnehmer"
-    },
-    {
-      "id": 5,
-      "name": "Hans Wurst",
-      "email": "dshgdah@jdsj.de",
-      "password": "123",
-      "role": "Teilnehmer"
     }
   ],
   "courses": [
@@ -229,195 +208,75 @@
         }
       ],
       "description": "In diesem Kurs wird subtrahiert."
+    }
+  ],
+  "subscriptions": [
+    {
+      "id": 1,
+      "accountID": 1,
+      "courseID": 1
     },
     {
-      "id": 5,
-      "category": "Biologie",
-      "name": "Mensch",
-      "tasks": [
-        {
-          "id": 0,
-          "name": "Wirbelsäule",
-          "question": "Frage",
-          "answers": [
-            {
-              "id": 0,
-              "name": "eine Antwort",
-              "correct": true
-            }
-          ],
-          "type": "oneChoice"
-        }
-      ],
-      "description": "Knochen"
+      "id": 2,
+      "accountID": 1,
+      "courseID": 3
+    }
+  ],
+  "owners": [
+    {
+      "id": 1,
+      "accountID": 2,
+      "courseID": 1
     },
     {
-      "id": 6,
-      "category": "Bautechnik",
-      "name": "Dächer",
-      "tasks": [
-        {
-          "id": 0,
-          "name": "Walmdach",
-          "question": "Frage",
-          "answers": [
-            {
-              "id": 0,
-              "name": "eine Antwort",
-              "correct": true
-            }
-          ],
-          "type": "oneChoice"
-        }
-      ],
-      "description": "Dachformen"
+      "id": 2,
+      "accountID": 2,
+      "courseID": 2
     },
     {
-      "id": 7,
-      "category": "Geographie",
-      "name": "Griechenland",
-      "tasks": [
-        {
-          "id": 0,
-          "name": "Gesteinsformationen",
-          "question": "Frage",
-          "answers": [
-            {
-              "id": 0,
-              "name": "eine Antwort",
-              "correct": true
-            }
-          ],
-          "type": "oneChoice"
-        }
-      ],
-      "description": "Küsten"
+      "id": 3,
+      "accountID": 2,
+      "courseID": 3
     },
     {
-      "id": 8,
-      "category": "Biologie",
-      "name": "Wirbeltiere",
-      "tasks": [
+      "id": 4,
+      "accountID": 2,
+      "courseID": 4
+    }
+  ],
+  "progresses": [
+    {
+      "id": 1,
+      "subscriptionID": 1,
+      "solvedTask": 1,
+      "selectedAnswers": [
         {
-          "id": 0,
-          "name": "Blauwal",
-          "question": "Frage",
-          "answers": [
-            {
-              "id": 0,
-              "name": "eine Antwort",
-              "correct": true
-            }
-          ],
-          "type": "oneChoice"
+          "id": 1,
+          "answerID": 1
         }
-      ],
-      "description": "Wale"
+      ]
     },
     {
-      "id": 9,
-      "category": "Geographie",
-      "name": "Balkalsee",
-      "tasks": [
+      "id": 2,
+      "subscriptionID": 2,
+      "solvedTask": 1,
+      "selectedAnswers": [
         {
-          "id": 0,
-          "name": "Fläche",
-          "question": "Frage",
-          "answers": [
-            {
-              "id": 0,
-              "name": "eine Antwort",
-              "correct": true
-            }
-          ],
-          "type": "oneChoice"
+          "id": 1,
+          "answerID": 1
         }
-      ],
-      "description": "Alles über den Blkalsee"
+      ]
     },
     {
-      "id": 10,
-      "category": "Bautechnik",
-      "name": "Holzbau",
-      "tasks": [
+      "id": 3,
+      "subscriptionID": 2,
+      "solvedTask": 2,
+      "selectedAnswers": [
         {
-          "id": 0,
-          "name": "Bauweise 1",
-          "question": "Frage",
-          "answers": [
-            {
-              "id": 0,
-              "name": "eine Antwort",
-              "correct": true
-            }
-          ],
-          "type": "oneChoice"
+          "id": 2,
+          "answerID": 3
         }
-      ],
-      "description": "Fachwerk"
-    },
-    {
-      "id": 11,
-      "category": "Biologie",
-      "name": "Krustentiere",
-      "tasks": [
-        {
-          "id": 0,
-          "name": "Landkrebs",
-          "question": "Frage",
-          "answers": [
-            {
-              "id": 0,
-              "name": "eine Antwort",
-              "correct": true
-            }
-          ],
-          "type": "oneChoice"
-        }
-      ],
-      "description": "Krebse"
-    },
-    {
-      "id": 12,
-      "category": "Bautechnik",
-      "name": "Mauerwerk",
-      "tasks": [
-        {
-          "id": 0,
-          "name": "Verband 1",
-          "question": "Frage",
-          "answers": [
-            {
-              "id": 0,
-              "name": "eine Antwort",
-              "correct": true
-            }
-          ],
-          "type": "oneChoice"
-        }
-      ],
-      "description": "In diesem Kurs lerne wir die verschieden Mauerverbände."
-    },
-    {
-      "id": 13,
-      "category": "Test",
-      "name": "Test1",
-      "tasks": [
-        {
-          "id": 0,
-          "name": "aufgabe32",
-          "question": "Frage",
-          "answers": [
-            {
-              "id": 0,
-              "name": "eine Antwort",
-              "correct": true
-            }
-          ],
-          "type": "oneChoice"
-        }
-      ],
-      "description": "Beschreibung test"
+      ]
     }
   ]
 }
