@@ -1,8 +1,9 @@
 import React, { useState, useEffect } from "react";
 import { Header } from "./components/Header";
 import { Footer } from "./components/Footer";
-import { getServerData, setServerData } from "./Services/dataServices";
+import { getServerData, setServerData } from "./services/dataServices";
 import { ThemeContext } from "@emotion/react";
+
 export function App(props) {
   const [roles, setRoles] = useState(null);
   const [accounts, setAccounts] = useState(null);
@@ -21,6 +22,8 @@ export function App(props) {
   const [corrections, setCorrections] = useState(null);
   const [gradings, setGradings] = useState(null);
 
+  const [loggedInAccount, setLoggedInAccount] = useState(null);
+  const [newServerData, setNewServerData] = useState(null);
   async function setInitialServerData() {
     await getServerData("roles").then((data) => {
       setRoles(data);
@@ -68,6 +71,22 @@ export function App(props) {
   useEffect(() => {
     setInitialServerData();
   }, []);
+  useEffect(() => {
+    if (newServerData !== null) {
+      let name = null;
+      let data = null;
+      newServerData.map((part) => {
+        if (part.name) {
+          name = part.name;
+        }
+        if (part.data) {
+          data = part.data;
+        }
+      });
+      setServerData(name, data);
+    }
+    setNewServerData(null);
+  }, [newServerData]);
   return (
     <React.Fragment>
       <Header
@@ -85,8 +104,12 @@ export function App(props) {
         answersByStudent={answersByStudent}
         corrections={corrections}
         gradings={gradings}
+        loggedInAccount={loggedInAccount}
+        setLoggedInAccount={(id) => setLoggedInAccount(id)}
+        setNewServerData={(name, data) =>
+          setNewServerData([{ name: name }, { data: data }])
+        }
       />
-      <Footer />
     </React.Fragment>
   );
 }

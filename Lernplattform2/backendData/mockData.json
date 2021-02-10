@@ -1,10 +1,18 @@
 {
   "roles": [
-    { "id": 1, "name": "author" },
-    { "id": 2, "name": "student" },
-    { "id": 3, "name": "administrator" }
+    {
+      "id": 1,
+      "name": "author"
+    },
+    {
+      "id": 2,
+      "name": "student"
+    },
+    {
+      "id": 3,
+      "name": "administrator"
+    }
   ],
-
   "accounts": [
     {
       "id": 1,
@@ -21,7 +29,6 @@
       "role": 1
     }
   ],
-
   "categories": [
     {
       "id": 1,
@@ -32,13 +39,16 @@
       "name": "Mathematik"
     }
   ],
-
   "courses": [
     {
       "id": 1,
       "category": 1,
       "name": "Europa",
-      "tasks": [{ "id": 1 }],
+      "tasks": [
+        {
+          "id": 1
+        }
+      ],
       "description": "In diesem Kurs behandeln wir Europa",
       "author": 2,
       "publish": "2021-02-06T16:59:43.067Z"
@@ -47,7 +57,14 @@
       "id": 2,
       "category": 1,
       "name": "Hauptstädte Europa",
-      "tasks": [{ "id": 2 }, { "id": 3 }],
+      "tasks": [
+        {
+          "id": 2
+        },
+        {
+          "id": 3
+        }
+      ],
       "description": "In diesem Kurs behandeln die europäischen Hauptstädte.",
       "author": 2,
       "publish": "2021-02-06T16:59:43.067Z"
@@ -56,7 +73,14 @@
       "id": 3,
       "category": 2,
       "name": "Addition",
-      "tasks": [{ "id": 4 }, { "id": 5 }],
+      "tasks": [
+        {
+          "id": 4
+        },
+        {
+          "id": 5
+        }
+      ],
       "description": "In diesem Kurs wird addiert.",
       "author": 2,
       "publish": "2021-02-06T16:59:43.067Z"
@@ -65,19 +89,35 @@
       "id": 4,
       "category": 2,
       "name": "Subtraktion",
-      "tasks": [{ "id": 6 }, { "id": 7 }],
+      "tasks": [
+        {
+          "id": 6
+        },
+        {
+          "id": 7
+        }
+      ],
       "description": "In diesem Kurs wird subtrahiert.",
       "author": 2,
       "publish": "2021-02-06T16:59:43.067Z"
     }
   ],
-
   "tasks": [
     {
       "id": 1,
       "name": "Aufgabe 1: Europa",
       "question": "Wieviele Länder gehören der EU an?",
-      "answers": [{ "id": 1 }, { "id": 2 }, { "id": 3 }],
+      "answers": [
+        {
+          "id": 1
+        },
+        {
+          "id": 2
+        },
+        {
+          "id": 3
+        }
+      ],
       "type": 2,
       "available": "2021-10-06T16:12:51.559Z",
       "publish": true
@@ -86,7 +126,17 @@
       "id": 2,
       "name": "Aufgabe 1: Dänemark",
       "question": "Wie heißt die Hauptstadt von Dänemark?",
-      "answers": [{ "id": 4 }, { "id": 5 }, { "id": 6 }],
+      "answers": [
+        {
+          "id": 4
+        },
+        {
+          "id": 5
+        },
+        {
+          "id": 6
+        }
+      ],
       "type": 2,
       "available": "2021-10-06T16:12:51.559Z",
       "publish": true
@@ -95,7 +145,17 @@
       "id": 3,
       "name": "Aufgabe 2: Irland",
       "question": "Wie heißt die Hauptstadt von Irland?",
-      "answers": [{ "id": 7 }, { "id": 8 }, { "id": 9 }],
+      "answers": [
+        {
+          "id": 7
+        },
+        {
+          "id": 8
+        },
+        {
+          "id": 9
+        }
+      ],
       "type": 2,
       "available": "2021-10-06T16:12:51.559Z",
       "publish": true
@@ -104,7 +164,11 @@
       "id": 4,
       "name": "Aufgabe 1: Addition",
       "question": "Wieviell ist 1 + 1",
-      "answers": [{ "id": 1 }],
+      "answers": [
+        {
+          "id": 1
+        }
+      ],
       "type": 1,
       "available": "2021-10-06T16:12:51.559Z",
       "publish": true
@@ -113,7 +177,11 @@
       "id": 5,
       "name": "Aufgabe 2: Addition",
       "question": "Wie lautet die Summe der Summanten 4 und 9",
-      "answers": [{ "id": 2 }],
+      "answers": [
+        {
+          "id": 2
+        }
+      ],
       "type": 1,
       "available": "2021-10-06T16:12:51.559Z",
       "publish": true
@@ -122,7 +190,11 @@
       "id": 6,
       "name": "Aufgabe 1: Subtraktion",
       "question": "Wieviell ist 3 - 1",
-      "answers": [{ "id": 3 }],
+      "answers": [
+        {
+          "id": 3
+        }
+      ],
       "type": 1,
       "available": "2021-10-06T16:12:51.559Z",
       "publish": true
@@ -131,13 +203,16 @@
       "id": 7,
       "name": "Aufgabe 2: Subtraktion",
       "question": "Wie lautet der Differenzwert des Minuend 9 und Subtrahend 4",
-      "answers": [{ "id": 4 }],
+      "answers": [
+        {
+          "id": 4
+        }
+      ],
       "type": 1,
       "available": "2021-10-06T16:12:51.559Z",
       "publish": true
     }
   ],
-
   "answerTypes": [
     {
       "id": 1,
@@ -148,7 +223,6 @@
       "name": "ChoiceAnswer"
     }
   ],
-
   "answers": [
     {
       "id": 1,
@@ -216,7 +290,6 @@
       "answerIDByType": 4
     }
   ],
-
   "choiceAnswers": [
     {
       "id": 1,
@@ -264,7 +337,6 @@
       "correct": false
     }
   ],
-
   "textAnswers": [
     {
       "id": 1,
@@ -283,7 +355,6 @@
       "name": ""
     }
   ],
-
   "subscriptions": [
     {
       "id": 1,
@@ -296,7 +367,6 @@
       "course": 3
     }
   ],
-
   "progresses": [
     {
       "id": 1,
@@ -332,7 +402,6 @@
       "date": ""
     }
   ],
-
   "answersByStudent": [
     {
       "id": 1,
@@ -340,7 +409,6 @@
       "answer": 1
     }
   ],
-
   "corrections": [
     {
       "id": 1,
@@ -349,7 +417,6 @@
       "points": 12
     }
   ],
-
   "gradings": [
     {
       "id": 1,
