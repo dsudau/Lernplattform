@@ -24,47 +24,47 @@ export function App(props) {
 
   const [loggedInAccount, setLoggedInAccount] = useState(null);
   const [newServerData, setNewServerData] = useState(null);
-  async function setInitialServerData() {
-    await getServerData("roles").then((data) => {
+  function setInitialServerData() {
+    getServerData("roles").then((data) => {
       setRoles(data);
     });
-    await getServerData("accounts").then((data) => {
+    getServerData("accounts").then((data) => {
       setAccounts(data);
     });
-    await getServerData("categories").then((data) => {
+    getServerData("categories").then((data) => {
       setCategories(data);
     });
-    await getServerData("courses").then((data) => {
+    getServerData("courses").then((data) => {
       setCourses(data);
     });
-    await getServerData("tasks").then((data) => {
+    getServerData("tasks").then((data) => {
       setTasks(data);
     });
-    await getServerData("answerTypes").then((data) => {
+    getServerData("answerTypes").then((data) => {
       setAnswerTypes(data);
     });
-    await getServerData("answers").then((data) => {
+    getServerData("answers").then((data) => {
       setAnswers(data);
     });
-    await getServerData("choiceAnswers").then((data) => {
+    getServerData("choiceAnswers").then((data) => {
       setChoiceAnswers(data);
     });
-    await getServerData("textAnswers").then((data) => {
+    getServerData("textAnswers").then((data) => {
       setTextAnswers(data);
     });
-    await getServerData("subscriptions").then((data) => {
+    getServerData("subscriptions").then((data) => {
       setSubscriptions(data);
     });
-    await getServerData("progresses").then((data) => {
+    getServerData("progresses").then((data) => {
       setProgresses(data);
     });
-    await getServerData("answersByStudent").then((data) => {
+    getServerData("answersByStudent").then((data) => {
       setAnswersByStudent(data);
     });
-    await getServerData("corrections").then((data) => {
+    getServerData("corrections").then((data) => {
       setCorrections(data);
     });
-    await getServerData("gradings").then((data) => {
+    getServerData("gradings").then((data) => {
       setGradings(data);
     });
   }
