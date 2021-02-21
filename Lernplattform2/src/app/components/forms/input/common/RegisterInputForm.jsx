@@ -72,18 +72,17 @@ export function RegisterInputForm({
         password: password,
         role: getRoleIDByRoleName(roles, role),
       });
-      setEmail("");
-      setUsername("");
-      setPassword("");
-      setPasswordConfirm("");
-      setRole("");
     }
+    setEmail("");
+    setUsername("");
+    setPassword("");
+    setPasswordConfirm("");
   }
   useEffect(() => {
     if (newAccount) {
       console.log(newAccount);
       setNewServerData("accounts", newAccount);
-      setTabIndex(2);
+      setTabIndex(1);
     }
   }, [newAccount]);
   return (
@@ -94,9 +93,9 @@ export function RegisterInputForm({
           <Input
             type="email"
             placeholder="E-Mail-Adresse"
-            onChange={({ target }) =>
-              setEmail(String(target.value).toLowerCase())
-            }
+            onChange={({ target }) => {
+              setEmail(String(target.value).toLowerCase());
+            }}
             value={email}
           />
         </FormControl>
@@ -105,7 +104,9 @@ export function RegisterInputForm({
           <Input
             type="text"
             placeholder="Benutzername"
-            onChange={({ target }) => setUsername(target.value)}
+            onChange={({ target }) => {
+              setUsername(target.value);
+            }}
             value={userName}
           />
         </FormControl>
@@ -114,7 +115,9 @@ export function RegisterInputForm({
           <Input
             type="password"
             placeholder="Passwort"
-            onChange={({ target }) => setPassword(target.value)}
+            onChange={({ target }) => {
+              setPassword(target.value);
+            }}
             value={password}
           />
         </FormControl>
@@ -123,7 +126,9 @@ export function RegisterInputForm({
           <Input
             type="password"
             placeholder="Passwort bestätigen"
-            onChange={({ target }) => setPasswordConfirm(target.value)}
+            onChange={({ target }) => {
+              setPasswordConfirm(target.value);
+            }}
             value={passwordConfirm}
           />
         </FormControl>
@@ -131,13 +136,17 @@ export function RegisterInputForm({
           <Stack direction="row">
             <Radio
               value="student"
-              onChange={({ target }) => setRole(target.value)}
+              onChange={({ target }) => {
+                setRole(target.value);
+              }}
             >
               Student
             </Radio>
             <Radio
               value="author"
-              onChange={({ target }) => setRole(target.value)}
+              onChange={({ target }) => {
+                setRole(target.value);
+              }}
             >
               {" "}
               Kursleiter
@@ -155,7 +164,12 @@ export function RegisterInputForm({
           </Button>
           <Text ml="2em">
             Bereits einen Account?{" "}
-            <Link color="teal.500" onClick={() => setTabIndex(1)}>
+            <Link
+              color="teal.500"
+              onClick={() => {
+                setTabIndex(1);
+              }}
+            >
               Anmelden!
             </Link>
           </Text>

@@ -46,37 +46,63 @@ export function Header({
             <Heading ts="2em">Willkommen auf der Lernplattform</Heading>
             <Tabs index={tabIndex}>
               <TabList>
-                <Tab fontSize="1.5em" onClickCapture={() => setTabIndex(0)}>
+                <Tab
+                  fontSize="1.5em"
+                  onClickCapture={() => {
+                    setTabIndex(0);
+                  }}
+                >
                   Kurs-Angebot
                 </Tab>
-                <Tab fontSize="1.5em" onClickCapture={() => setTabIndex(1)}>
+                <Tab
+                  fontSize="1.5em"
+                  onClickCapture={() => {
+                    setTabIndex(1);
+                  }}
+                >
                   Anmelden
                 </Tab>
-                <Tab fontSize="1.5em" onClickCapture={() => setTabIndex(2)}>
+                <Tab
+                  fontSize="1.5em"
+                  onClickCapture={() => {
+                    setTabIndex(2);
+                  }}
+                >
                   Registrieren
                 </Tab>
               </TabList>
               <TabPanels>
                 <TabPanel>
-                  <CourseOverview courses={courses} categories={categories} />
+                  <CourseOverview
+                    courses={courses}
+                    categories={categories}
+                    accounts={accounts}
+                    setTabIndex={(index) => {
+                      handleTabIndex(index);
+                    }}
+                  />
                 </TabPanel>
                 <TabPanel>
                   <LoginInputForm
                     accounts={accounts}
-                    setLoggedInAccount={(userName) =>
-                      setLoggedInAccount(userName)
-                    }
-                    setTabIndex={(index) => handleTabIndex(index)}
+                    setLoggedInAccount={(userName) => {
+                      setLoggedInAccount(userName);
+                    }}
+                    setTabIndex={(index) => {
+                      handleTabIndex(index);
+                    }}
                   />
                 </TabPanel>
                 <TabPanel>
                   <RegisterInputForm
                     roles={roles}
                     accounts={accounts}
-                    setTabIndex={(index) => handleTabIndex(index)}
-                    setNewServerData={(name, data) =>
-                      setNewServerData(name, data)
-                    }
+                    setTabIndex={(index) => {
+                      handleTabIndex(index);
+                    }}
+                    setNewServerData={(name, data) => {
+                      setNewServerData(name, data);
+                    }}
                   />
                 </TabPanel>
               </TabPanels>
@@ -88,7 +114,12 @@ export function Header({
               Willkommen auf der Lernplattform,{" "}
               {getUserNameByID(accounts, loggedInAccount)}{" "}
             </Heading>
-            <Link fontSize="1" onClick={() => setLoggedInAccount(null)}>
+            <Link
+              fontSize="1"
+              onClick={() => {
+                setLoggedInAccount(null);
+              }}
+            >
               (ausloggen)
             </Link>
             <Tabs>

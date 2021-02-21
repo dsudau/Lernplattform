@@ -27,6 +27,62 @@
       "email": "maria@muster.de",
       "password": "1234",
       "role": 1
+    },
+    {
+      "id": 3,
+      "name": "Bernd",
+      "email": "bernd@bernd.de",
+      "password": "1234",
+      "role": 1
+    },
+    {
+      "id": 4,
+      "name": "Bernd Meyer",
+      "email": "bern@meyer.de",
+      "password": "1234",
+      "role": 2
+    },
+    {
+      "id": 5,
+      "name": "Sabine Meyer",
+      "email": "sabine@meyer.de",
+      "password": "1234",
+      "role": 2
+    },
+    {
+      "id": 6,
+      "name": "Rüdiger Nehberg",
+      "email": "ruediger@nehberg.de",
+      "password": "1234",
+      "role": 2
+    },
+    {
+      "id": 7,
+      "name": "Max Körner",
+      "email": "max@koerner.de",
+      "password": "1234",
+      "role": 1
+    },
+    {
+      "id": 8,
+      "name": "Lola Lerche",
+      "email": "lola@lerche.de",
+      "password": "123",
+      "role": 2
+    },
+    {
+      "id": 9,
+      "name": "Lila",
+      "email": "lila@lama.de",
+      "password": "1234",
+      "role": 2
+    },
+    {
+      "id": 10,
+      "name": "Maria Marx",
+      "email": "maria@marx.de",
+      "password": "1234",
+      "role": 2
     }
   ],
   "categories": [

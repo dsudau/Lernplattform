@@ -84,6 +84,11 @@ export function App(props) {
         }
       });
       setServerData(name, data);
+      if (name == "accounts") {
+        getServerData("accounts").then((data) => {
+          setAccounts(data);
+        });
+      }
     }
     setNewServerData(null);
   }, [newServerData]);
@@ -106,9 +111,9 @@ export function App(props) {
         gradings={gradings}
         loggedInAccount={loggedInAccount}
         setLoggedInAccount={(id) => setLoggedInAccount(id)}
-        setNewServerData={(name, data) =>
-          setNewServerData([{ name: name }, { data: data }])
-        }
+        setNewServerData={(name, data) => {
+          setNewServerData([{ name: name }, { data: data }]);
+        }}
       />
     </React.Fragment>
   );
